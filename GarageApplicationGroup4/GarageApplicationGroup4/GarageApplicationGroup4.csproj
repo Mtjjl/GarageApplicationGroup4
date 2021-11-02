@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Garage\Garage.cs" />
     <Compile Include="Garage\Manage.cs" />
+    <Compile Include="MenuTest\Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vehicle\Vehicle.cs" />
