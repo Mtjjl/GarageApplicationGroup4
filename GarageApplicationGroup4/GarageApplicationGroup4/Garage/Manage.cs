@@ -7,16 +7,33 @@ using System.Threading.Tasks;
 
 namespace GarageApplicationGroup4
 {
+    //Denna klass hanterar vårt Garage<Vehicle>-objekt.
     class Manage
     {
+        /*Skapar en lokal referens till den enda instansen som finns av Garage<T>-klassen, så att
+         * den smidigt kan arbetas med i denna klass utan att man behöver kalla på den varje gång den
+         * ska användas. Istället för "Garage<Vehicle>.Get()", räcker det med "garage".*/
         private Garage<Vehicle> garage = Garage<Vehicle>.Get();
 
+        //Den enda instansen av Manage-klassen som ska finnas i lösningen.
         private static readonly Manage garageHandler = new Manage();
 
+        //Privat constructor, eftersom inga instanser ska kunna skapas någon annanstans än inom denna klass.
         private Manage() { }
 
+        /*Via denna metod kan andra klasser komma åt den enda instansen av Manage-klassen som ska finnas.
+         *så i menyn kommer man t.ex. kunna skriva Manage.Garage().ListAllVehicles(); */
         public static Manage Garage() => garageHandler;
 
+
+
+        /* 
+         -*-*-*-*- NEDAN FÖLJLER ALLA METODER SOM HANTERAR GARAGET -*-*-*-*-
+         */
+
+
+
+        //Tar emot ett objekt av typen Vehicle och lägger till det i garaget
         public void AddVehicle(Vehicle vehicle)
         {
             if (garage.vehicles.Count < garage.MaxLimit)
@@ -29,19 +46,43 @@ namespace GarageApplicationGroup4
             }
         }
 
-        public void ListAllVehicles()
+        /*Tar reda på om det finns fordon av en viss typ. Om det finns, tar den bort det första matchande objektet från garaget.
+         * När man kallar på denna metod byts T ut mot en fordonstyp, t.ex. Car...*/
+        public void RemoveVehicleOfType<T>() where T : Vehicle
         {
-            foreach (Vehicle vehicle in garage)
+            if (garage.vehicles.OfType<T>().Any())
             {
-                Console.WriteLine(vehicle);
+                garage.vehicles.Remove(garage.vehicles.OfType<T>().First());
+            }
+            else
+            {
+                Console.WriteLine("There are no vehicles of the chosen type in the garage.");
             }
         }
 
-        public void ListVehiclesOfType<U>() where U : Vehicle
+        //Tar reda på om det om det finns fordon i garaget. Om det finns minst ett skriver den ut alla fordon.
+        public void ListAllVehicles()
         {
-            if (garage.vehicles.OfType<U>().Any())
+            if (garage.vehicles.Any())
             {
-                foreach (Vehicle vehicle in garage.OfType<U>())
+                foreach (Vehicle vehicle in garage)
+                {
+                    Console.WriteLine(vehicle);
+                }
+            }
+            else
+            {
+                Console.WriteLine("The garage is currently empty.");
+            }
+        }
+
+        /*Tar reda på om det finns fordon av en viss typ. Om det finns minst ett skriver den ut alla fordon av denna typ.
+         * När man kallar på denna metod byts T ut mot en fordonstyp, t.ex. Car...*/
+        public void ListVehiclesOfType<T>() where T : Vehicle
+        {
+            if (garage.vehicles.OfType<T>().Any())
+            {
+                foreach (Vehicle vehicle in garage.OfType<T>())
                 {
                     Console.WriteLine(vehicle);
                 }
@@ -52,17 +93,19 @@ namespace GarageApplicationGroup4
             }
         }
 
-        public void RemoveVehicleOfType<U>() where U : Vehicle
+        //Söker igenom alla fordon efter matchande registreringsnummer och talar om huruvida fordonet hittades eller inte.
+        public void SearchForVehicle(string licensePlate)
         {
-            if (garage.vehicles.OfType<U>().Any())
+            foreach (Vehicle vehicle in garage)
             {
-                garage.vehicles.Remove(garage.vehicles.OfType<U>().First());
+                //Följande villkor kommer (nog) att behöva korrigeras något
+                if (vehicle.ToString().Contains(licensePlate)) 
+                {
+                    Console.WriteLine("Car found");
+                    return;
+                }
             }
-            else
-            {
-                Console.WriteLine("There are no vehicles of the chosen type in the garage.");
-            }
+            Console.WriteLine("Car not found");
         }
-
     }
 }

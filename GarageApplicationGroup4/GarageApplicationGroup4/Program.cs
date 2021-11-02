@@ -10,7 +10,10 @@ namespace GarageApplicationGroup4
     {
         static void Main(string[] args)
         {
+            Menu garageMenu = new Menu();
 
+            garageMenu.MenuMethod();
+            Console.ReadKey();
 
         }
     }
