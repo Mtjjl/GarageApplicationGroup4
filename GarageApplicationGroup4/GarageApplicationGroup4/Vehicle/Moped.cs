@@ -1,8 +1,9 @@
 ﻿using System;
 
-public class Class1
+public class Moped
 {
-	public Class1()
+	public Moped()
 	{
+
 	}
 }
