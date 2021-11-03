@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Car
+public class Car : Vehicle
 {
 	public Car()
 	{
