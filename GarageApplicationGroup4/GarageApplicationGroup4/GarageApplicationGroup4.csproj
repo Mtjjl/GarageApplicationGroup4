@@ -48,6 +48,8 @@
     <Compile Include="MenuTest\Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Break.cs" />
+    <Compile Include="Utilities\InputValidator.cs" />
     <Compile Include="Vehicle\Bus.cs" />
     <Compile Include="Vehicle\Car.cs" />
     <Compile Include="Vehicle\Moped.cs" />
