@@ -1,8 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Bus
+namespace GarageApplicationGroup4
 {
-	public Bus()
+
+	public class Bus
 	{
+		public Bus()
+		{
+
+		}
 	}
+
 }

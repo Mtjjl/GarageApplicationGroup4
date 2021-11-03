@@ -1,9 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Trucks
-
+namespace GarageApplicationGroup4
 {
-	public Trucks()
+	public class Truck : Vehicle
 	{
+		public Truck()
+		{
+
+		}
 	}
+
+
 }
