@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace GarageApplicationGroup4
 {
@@ -39,10 +39,13 @@ namespace GarageApplicationGroup4
             if (garage.vehicles.Count < garage.MaxLimit)
             {
                 garage.vehicles.Add(vehicle);
+                Console.WriteLine("Vehicle added successfully.");
+                Break.PressToContinue();
             }
             else
             {
                 Console.WriteLine("The garage is full. No more vehicles can be added.");
+                Break.PleaseWait(2);
             }
         }
 
@@ -53,10 +56,13 @@ namespace GarageApplicationGroup4
             if (garage.vehicles.OfType<T>().Any())
             {
                 garage.vehicles.Remove(garage.vehicles.OfType<T>().First());
+                Console.WriteLine("A vehicle of the chosen type has been removed from the garage.");
+                Break.PressToContinue();
             }
             else
             {
                 Console.WriteLine("There are no vehicles of the chosen type in the garage.");
+                Break.PleaseWait(2);
             }
         }
 
@@ -69,10 +75,12 @@ namespace GarageApplicationGroup4
                 {
                     Console.WriteLine(vehicle);
                 }
+                Break.PressToContinue();
             }
             else
             {
                 Console.WriteLine("The garage is currently empty.");
+                Break.PleaseWait(2);
             }
         }
 
@@ -86,10 +94,12 @@ namespace GarageApplicationGroup4
                 {
                     Console.WriteLine(vehicle);
                 }
+                Break.PressToContinue();
             }
             else
             {
                 Console.WriteLine("There are no vehicles of the chosen type in the garage.");
+                Break.PleaseWait(2);
             }
         }
 
@@ -98,14 +108,16 @@ namespace GarageApplicationGroup4
         {
             foreach (Vehicle vehicle in garage)
             {
-                //Följande villkor kommer (nog) att behöva korrigeras något
+                //Följande villkor kommer att behövas fixas när registration blivit publik
                 if (vehicle.ToString().Contains(licensePlate)) 
                 {
-                    Console.WriteLine("Car found");
+                    Console.WriteLine("The vehicle you searched for is in the garage.");
+                    Break.PressToContinue();
                     return;
                 }
             }
-            Console.WriteLine("Car not found");
+            Console.WriteLine("The vehicle you searched for could not be found in the garage.");
+            Break.PleaseWait(2);
         }
     }
 }
