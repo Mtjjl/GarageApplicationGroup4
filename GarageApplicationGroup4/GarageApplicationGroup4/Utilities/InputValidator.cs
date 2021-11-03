@@ -8,7 +8,7 @@ namespace GarageApplicationGroup4
 {
     static class Validate
     {
-        public static bool PlateNumberInput(out string input)
+        public static bool GetValidPlateNumber(out string input)
         {
             input = string.Empty;
             while (input.ToUpper() != "EXIT")
@@ -44,5 +44,24 @@ namespace GarageApplicationGroup4
             Console.Clear();
             return false;
         }
+
+        public static int GetValidNumber(string info, int min, int max)
+        {
+            bool inputAccepted = false;
+            int validNumber = min -1;
+
+            while (!inputAccepted || validNumber < min || validNumber > max )
+            {
+                Console.Clear();
+                Console.WriteLine(info);
+                Console.WriteLine($"\nEnter a number between {min} and {max}");
+                inputAccepted = Int32.TryParse(Console.ReadLine(), out validNumber);
+            }
+
+            Console.Clear();
+            return validNumber;
+        }
+
+
     }
 }
