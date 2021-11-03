@@ -14,7 +14,7 @@ namespace GarageApplicationGroup4
         { get; set; }
         public string Color
         { get; set; }
-        public string Fuel
+        public string propellant
         { get; set; }
         public string Manufacturer
         { get; set; }
