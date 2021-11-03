@@ -7,15 +7,21 @@ using System.Xml.Serialization;
 
 namespace GarageApplicationGroup4
 {
-   public class Vehicle
+    [XmlInclude(typeof(Bus))]
+    [XmlInclude(typeof(Car))]
+    [XmlInclude(typeof(Moped))]
+    [XmlInclude(typeof(Motorcycle))]
+    [XmlInclude(typeof(Truck))]
+    public class Vehicle
     {
+
         public string RegistrationNumber
         { get; set; }
         public string Model
         { get; set; }
         public string Color
         { get; set; }
-        public string propellant
+        public string Propellant
         { get; set; }
         public string Manufacturer
         { get; set; }
