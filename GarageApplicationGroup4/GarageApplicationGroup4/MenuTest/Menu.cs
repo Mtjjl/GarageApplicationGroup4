@@ -10,7 +10,6 @@ namespace GarageApplicationGroup4
     {
         public void MenuMethod()
         {
-            Console.WriteLine("Welcome to the Garage!");
             bool isRunning = true;
             while (isRunning)
             {
@@ -23,7 +22,8 @@ namespace GarageApplicationGroup4
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        //ShowVehicles()
+                        ShowVehicles();
+                        isRunning = false;
                         break;
 
                     case "2":
@@ -56,5 +56,85 @@ namespace GarageApplicationGroup4
 
             }
         }
+
+        public void GreetingMessage()
+        {
+            Console.WriteLine("Welcome to the Garage!\n");
+        }
+
+        public void ShowVehicles()
+        {
+            Console.Clear();
+            bool isRunning = true;
+            while (isRunning)
+            {
+                Console.WriteLine("[1] See all vehicles" +
+                "\n[2] See all cars" +
+                "\n[3] See all trucks" +
+                "\n[4] See all motorcycles" +
+                "\n[5] See all mopeds" +
+                "\n[6] Back to main menu");
+
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        //Manage.Garage().ListAllVehicles();
+                        //MenuMethod();
+                        break;
+
+                    case "2":
+                        Console.Clear();
+                        //Manage.Garage().ListVehiclesOfType<SUBKLASSENSNAMN>();
+                        Console.WriteLine("\nPress any key to continue");
+                        Console.ReadKey();
+                        Console.Clear();
+                        MenuMethod();
+                        break;
+
+                    case "3":
+                        Console.Clear();
+                        //Manage.Garage().ListVehiclesOfType<SUBKLASSENSNAMN>();
+                        Console.WriteLine("\nPress any key to continue");
+                        Console.ReadKey();
+                        Console.Clear();
+                        MenuMethod();
+                        break;
+
+                    case "4":
+                        Console.Clear();
+                        //Manage.Garage().ListVehiclesOfType<SUBKLASSENSNAMN>();
+                        Console.WriteLine("\nPress any key to continue");
+                        Console.ReadKey();
+                        Console.Clear();
+                        MenuMethod();
+                        break;
+
+                    case "5":
+                        Console.Clear();
+                        //Manage.Garage().ListVehiclesOfType<SUBKLASSENSNAMN>();
+                        Console.WriteLine("\nPress any key to continue");
+                        Console.ReadKey();
+                        Console.Clear();
+                        MenuMethod();
+                        break;
+
+                    case "6":
+                        Console.Clear();
+                        MenuMethod();
+                        isRunning = false;
+                        break;
+
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Select a number between 1-6 in the menu and press Enter to proceed.");
+                        Console.WriteLine("\nPress any key to continue");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                }
+            }
+            
+        }
+
     }
 }

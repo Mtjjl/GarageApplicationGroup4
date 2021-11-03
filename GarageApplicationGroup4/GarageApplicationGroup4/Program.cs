@@ -12,6 +12,7 @@ namespace GarageApplicationGroup4
         {
             Menu garageMenu = new Menu();
 
+            garageMenu.GreetingMessage();
             garageMenu.MenuMethod();
             Console.ReadKey();
 
