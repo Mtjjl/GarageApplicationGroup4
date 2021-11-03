@@ -1,9 +1,15 @@
 ﻿using System;
 
-public class Car : Vehicle
+
+namespace GarageApplicationGroup4
+{
+    public class Car : Vehicle
 {
 	public Car()
 	{
 
 	}
 }
+
+}
+

@@ -8,7 +8,7 @@ namespace GarageApplicationGroup4
 {
     class Vehicle
     {
-        string RegistrationNumber
+        public string RegistrationNumber
         { get; set; }
         public string Model
         { get; set; }

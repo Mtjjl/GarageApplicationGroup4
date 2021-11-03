@@ -1,10 +1,14 @@
 ﻿using System;
 
-public class Motorcycle : Vehicle
 
-
+namespace GarageApplicationGroup4
 {
-	public Motorcycle() 
+	public class Motorcycle : Vehicle
 	{
+		public Motorcycle()
+		{
+		}
 	}
+
 }
+
