@@ -51,7 +51,7 @@
     <Compile Include="Vehicle\Bus.cs" />
     <Compile Include="Vehicle\Car.cs" />
     <Compile Include="Vehicle\Moped.cs" />
-    <Compile Include="Vehicle\Motorcykle.cs" />
+    <Compile Include="Vehicle\Motorcycle.cs" />
     <Compile Include="Vehicle\Truck.cs" />
     <Compile Include="Vehicle\Vehicle.cs" />
   </ItemGroup>

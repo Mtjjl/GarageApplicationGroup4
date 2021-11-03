@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GarageApplicationGroup4
 {
-	public class Moped
+	public class Motorcycle
 	{
-		public Moped()
+		public Motorcycle()
 		{
 
 		}
