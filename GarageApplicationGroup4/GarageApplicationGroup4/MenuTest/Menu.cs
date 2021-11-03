@@ -46,6 +46,11 @@ namespace GarageApplicationGroup4
                         break;
 
                     default:
+                        Console.Clear();
+                        Console.WriteLine("Select a number between 1-5 in the Garage Menu and press Enter to proceed.");
+                        Console.WriteLine("\nPress any key to continue");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                 }
 
