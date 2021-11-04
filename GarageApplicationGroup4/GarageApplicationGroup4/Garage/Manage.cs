@@ -142,7 +142,7 @@ namespace GarageApplicationGroup4
         {
             foreach (Vehicle vehicle in garage)
             {
-                if (vehicle.RegistrationNumber == licensePlate) 
+                if (vehicle.RegistrationNumber == licensePlate)
                 {
                     Console.WriteLine("The vehicle you searched for is in the garage.");
                     Break.PressToContinue();
@@ -197,6 +197,134 @@ namespace GarageApplicationGroup4
 
                 Console.WriteLine("Something went wrong when trying to load...");
                 Break.PleaseWait(2);
+            }
+        }
+        public void CreateVehicle()
+        {
+            bool BetweenRanges(int a, int b, int number)
+            {
+                return (a <= number && number <= b);
+            }
+
+            Console.WriteLine("What kind of vehicle do you want to park: ");
+            string kindOfVehicle = Console.ReadLine().ToLower();
+
+            Console.WriteLine("Please enter the registration number: ");
+            string RegNr = Console.ReadLine();
+            //Validate.GetValidPlateNumber();           
+
+            Console.WriteLine("What manufactorer: ");
+            string ManuFac = Console.ReadLine();
+
+            Console.WriteLine("Which model: ");
+            string Model = Console.ReadLine();
+
+            Console.WriteLine("When was it made: ");
+            int YearMade = Convert.ToInt32(Console.ReadLine());
+            while (!BetweenRanges(1950, 2021, YearMade))
+            {
+                Console.WriteLine("Not a valid year, try again.");
+                YearMade = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("What kind of propellant: ");
+            string Propellant = Console.ReadLine();
+
+            Console.WriteLine("How many wheels: ");
+            int Wheels = Convert.ToInt32(Console.ReadLine());
+            while (!BetweenRanges(2, 8, Wheels))
+            {
+                Console.WriteLine("Not a valid number of wheels, try again.");
+                Wheels = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("What color is it: ");
+            string Color = Console.ReadLine().ToLower();
+
+            switch (kindOfVehicle)
+            {
+                case "car":
+                    bool carCabbool = false;
+                    askBool("Is it a cabrollet Y/N: ", out carCabbool);
+
+                    Console.WriteLine("");
+
+                    bool carTowbool = false;
+                    askBool("Does it have a towbar Y/N: ", out carTowbool);
+
+                    Garage<Vehicle>.Get().vehicles.Add(new Car(carCabbool, carTowbool, $"{RegNr}", $"{Model}", $"{Color}", $"{Propellant}", $"{ManuFac}", Wheels, YearMade));
+                    Console.WriteLine($"Your {Color} {ManuFac} {Model} with licencenumer {RegNr} has now been parked.");
+                    break;
+
+                case "bus":
+                    bool busDeckbool = false;
+                    askBool("Is it a doubledecker Y/N: ", out busDeckbool);
+
+                    Console.WriteLine("How many passengers does it take: ");
+                    int numberOfPass = Convert.ToInt32(Console.ReadLine());
+                    while (!BetweenRanges(1, 100, numberOfPass))
+                    {
+                        Console.WriteLine("Not a valid number of passengers, try again.");
+                        numberOfPass = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    Garage<Vehicle>.Get().vehicles.Add(new Bus(numberOfPass, busDeckbool, $"{RegNr}", $"{Model}", $"{Color}", $"{Propellant}", $"{ManuFac}", Wheels, YearMade));
+                    //int PassangerNo, bool isDoubleDecker, string RegistrationNumber, string Model, string Color, string Propellant, string Manufacturer, int NumberOfWheels, int YearMade
+                    Console.WriteLine($"Your {Color} {ManuFac} {Model} with licencenumer {RegNr} has now been parked.");
+                    break;
+                case "truck":
+                    Console.WriteLine("What weight class is it: ");
+                    string truckWeightclass = Console.ReadLine();
+
+                    Console.WriteLine("How much weight can it pull: ");
+                    int truckMaxPull = Convert.ToInt32(Console.ReadLine());
+
+                    Garage<Vehicle>.Get().vehicles.Add(new Truck(truckWeightclass, truckMaxPull, $"{RegNr}", $"{Model}", $"{Color}", $"{Propellant}", $"{ManuFac}", Wheels, YearMade));
+                    // (string WeightClass, int WeightPulled,
+                    Console.WriteLine($"Your {Color} {ManuFac} {Model} with licencenumer {RegNr} has now been parked.");
+                    break;
+                case "moped":
+                    Console.WriteLine("What weight class is it: ");
+                    string mopedWeightclass = Console.ReadLine();
+
+                    Console.WriteLine("What kind of moped is it: ");
+                    string mopedType = Console.ReadLine();
+
+                    Garage<Vehicle>.Get().vehicles.Add(new Moped(mopedWeightclass, mopedType, $"{RegNr}", $"{Model}", $"{Color}", $"{Propellant}", $"{ManuFac}", Wheels, YearMade));
+                    Console.WriteLine($"Your {Color} {ManuFac} {Model} with licencenumer {RegNr} has now been parked.");
+                    break;
+                case "motorcycle":
+                    Console.WriteLine("What weight class is it: ");
+                    string mcWeightclass = Console.ReadLine();
+
+                    Console.WriteLine("How many CC does it have: ");
+                    int numberOfcc = Convert.ToInt32(Console.ReadLine());
+
+                    Garage<Vehicle>.Get().vehicles.Add(new Motorcycle($"{RegNr}", $"{ManuFac}", $"{Model}", YearMade, $"{Propellant}", $"{Color}", Wheels, mcWeightclass, numberOfcc));
+                    //(string RegistrationNumber, string Model, string Manufacturer, int YearMade, string Propellent, string Color, int NumberOfWheels, string WeightClass, int NumberOfCC)
+                    Console.WriteLine($"Your {Color} {ManuFac} {Model} with licencenumer {RegNr} has now been parked.");
+                    break;
+                default:
+                    break;
+            }
+        }
+        static public bool askBool(string question, out bool answer)
+        {
+            while (true)
+            {
+                
+                Console.Write(question);
+                var input = Console.ReadLine().Trim().ToLowerInvariant();
+                switch (input)
+                {
+                    case "y":
+                    case "yes":
+                        return (answer) = true;
+
+                    case "n":
+                    case "no":
+                        return (answer) = false;
+                }
             }
         }
     }
