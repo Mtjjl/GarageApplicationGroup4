@@ -23,34 +23,34 @@ namespace GarageApplicationGroup4
                 {
                     case "1":
                         ShowVehicles();
-                        isRunning = false;
                         break;
 
                     case "2":
-                        //AddVehicle()
+                        //AddVehicle();
                         break;
 
                     case "3":
-                        //RemoveVehicle()
+                        Console.Clear();
+                        Manage.Garage().RemoveVehicle();
                         break;
 
                     case "4":
-                        //SearchVehicle()
+                        if (Validate.GetValidPlateNumber(out string plateNumber))
+                        {
+                            Manage.Garage().SearchForVehicle(plateNumber);
+                        }
                         break;
 
                     case "5":
                         Console.Clear();
-                        Console.WriteLine("You have decided to exit the Garage.");
-                        Console.WriteLine("Bye bye!");
+                        Console.WriteLine("You have decided to exit the Garage.\nBye bye!");
                         isRunning = false;
                         break;
 
                     default:
                         Console.Clear();
                         Console.WriteLine("Select a number between 1-5 in the Garage Menu and press Enter to proceed.");
-                        Console.WriteLine("\nPress any key to continue");
-                        Console.ReadKey();
-                        Console.Clear();
+                        Break.PressToContinue();
                         break;
                 }
 
@@ -78,58 +78,44 @@ namespace GarageApplicationGroup4
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        //Manage.Garage().ListAllVehicles();
-                        //MenuMethod();
+                        Console.Clear();
+                        Manage.Garage().ListAllVehicles();
+                        Console.Clear();
                         break;
 
                     case "2":
                         Console.Clear();
-                        //Manage.Garage().ListVehiclesOfType<SUBKLASSENSNAMN>();
-                        Console.WriteLine("\nPress any key to continue");
-                        Console.ReadKey();
+                        Manage.Garage().ListVehiclesOfType<Car>();
                         Console.Clear();
-                        MenuMethod();
                         break;
 
                     case "3":
                         Console.Clear();
-                        //Manage.Garage().ListVehiclesOfType<SUBKLASSENSNAMN>();
-                        Console.WriteLine("\nPress any key to continue");
-                        Console.ReadKey();
+                        Manage.Garage().ListVehiclesOfType<Truck>();
                         Console.Clear();
-                        MenuMethod();
                         break;
 
                     case "4":
                         Console.Clear();
-                        //Manage.Garage().ListVehiclesOfType<SUBKLASSENSNAMN>();
-                        Console.WriteLine("\nPress any key to continue");
-                        Console.ReadKey();
+                        Manage.Garage().ListVehiclesOfType<Motorcycle>();
                         Console.Clear();
-                        MenuMethod();
                         break;
 
                     case "5":
                         Console.Clear();
-                        //Manage.Garage().ListVehiclesOfType<SUBKLASSENSNAMN>();
-                        Console.WriteLine("\nPress any key to continue");
-                        Console.ReadKey();
+                        Manage.Garage().ListVehiclesOfType<Moped>();
                         Console.Clear();
-                        MenuMethod();
                         break;
 
                     case "6":
                         Console.Clear();
-                        MenuMethod();
                         isRunning = false;
                         break;
 
                     default:
                         Console.Clear();
                         Console.WriteLine("Select a number between 1-6 in the menu and press Enter to proceed.");
-                        Console.WriteLine("\nPress any key to continue");
-                        Console.ReadKey();
-                        Console.Clear();
+                        Break.PressToContinue();
                         break;
                 }
             }
