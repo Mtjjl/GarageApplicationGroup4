@@ -27,7 +27,7 @@ namespace GarageApplicationGroup4
         { get; set; }
         public int NumberOfWheels
         { get; set; }
-        public int YearMade 
+        public int YearMade
         { get; set; }
 
 
