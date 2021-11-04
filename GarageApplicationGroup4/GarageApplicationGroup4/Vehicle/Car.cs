@@ -10,7 +10,6 @@ namespace GarageApplicationGroup4
     {
         public bool isCab { get; set; }
         public bool hasTowbar { get; set; }
-        public int YearMade { get; set; }
         public Car()
         {
 

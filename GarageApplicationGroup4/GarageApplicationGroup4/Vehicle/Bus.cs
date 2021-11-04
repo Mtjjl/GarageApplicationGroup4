@@ -10,7 +10,6 @@ namespace GarageApplicationGroup4
     {
         public bool isDoubleDecker { get; set; }
         public int numberOfPassenger { get; set; }
-        public int YearMade { get; set; }
         public Bus()
         {
 

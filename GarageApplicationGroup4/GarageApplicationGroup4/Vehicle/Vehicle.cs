@@ -25,6 +25,8 @@ namespace GarageApplicationGroup4
         { get; set; }
         public string Manufacturer
         { get; set; }
+        public int YearMade 
+        { get; set; }
         public int NumberOfWheels
         { get; set; }
 
