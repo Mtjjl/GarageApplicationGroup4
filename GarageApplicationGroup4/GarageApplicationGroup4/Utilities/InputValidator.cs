@@ -36,9 +36,8 @@ namespace GarageApplicationGroup4
                 else if (input != "EXIT")
                 {
                     Console.Clear();
-                    Console.WriteLine($"You have entered an invalid plate number. Plate number must have the following format: ABC123\n" +
-                                      $"Please try again...");
-                    Thread.Sleep(2000);
+                    Console.WriteLine($"You have entered an invalid plate number. Plate number must have the following format: ABC123\n");
+                    Break.PleaseWait(2);
                 }
             }
             Console.Clear();
@@ -58,7 +57,7 @@ namespace GarageApplicationGroup4
                 inputAccepted = Int32.TryParse(Console.ReadLine(), out validNumber);
             }
 
-            Console.Clear();
+            Break.PleaseWait(2);
             return validNumber;
         }
 
