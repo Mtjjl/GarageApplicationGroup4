@@ -10,7 +10,7 @@ namespace GarageApplicationGroup4
 	{
 		public Motorcycle()
 		{
-
+			// motorcykelklassen
 		}
 	}
 
