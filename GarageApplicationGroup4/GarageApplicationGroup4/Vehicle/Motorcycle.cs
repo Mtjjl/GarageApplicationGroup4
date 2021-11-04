@@ -14,10 +14,18 @@ namespace GarageApplicationGroup4
 		{
 		}
 
-        public Motorcycle(string RegistrationNumber, string Model, string Manufacturer, int YearMade, string Propellent, string Color, int NumberOfWheels, string WeightClass, int NumberOfCC)
-        {
-                
-        }
+		public Motorcycle(string RegistrationNumber, string Model, string Manufacturer, int YearMade, string Propellent, string Color, int NumberOfWheels, string WeightClass, int NumberOfCC)
+		{
+			this.RegistrationNumber = RegistrationNumber;
+			this.Model = Model;
+			this.Manufacturer = Manufacturer;
+			this.YearMade = YearMade;
+			this.Propellant = Propellent;
+			this.Color = Color;
+			this.NumberOfCC = NumberOfCC;
+			this.WeightClass = WeightClass;
+			this.NumberOfWheels = NumberOfWheels;
+		}
 	}
 
 }
