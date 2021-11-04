@@ -44,12 +44,13 @@ namespace GarageApplicationGroup4
                     case "5":
                         Console.Clear();
                         Console.WriteLine("You have decided to exit the Garage.\nBye bye!");
+                        Manage.Garage().Save();
                         isRunning = false;
                         break;
 
                     default:
                         Console.Clear();
-                        Console.WriteLine("Select a number between 1-5 in the Garage Menu and press Enter to proceed.");
+                        Console.WriteLine("Select a number between 1-5 in the Garage menu and press Enter to proceed.");
                         Break.PressToContinue();
                         break;
                 }
@@ -60,6 +61,7 @@ namespace GarageApplicationGroup4
         public void GreetingMessage()
         {
             Console.WriteLine("Welcome to the Garage!\n");
+            Manage.Garage().Load();
         }
 
         public void ShowVehicles()
