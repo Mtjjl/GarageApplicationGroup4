@@ -13,17 +13,17 @@ namespace GarageApplicationGroup4
         public Moped()
 		{
 		}
-        public Moped(string mopedClass, string typeOfMoped, string registrationNumber, string model, string color, string propellent, string manufacturer, int numberOfWheels, int yearMade)
+        public Moped(string MopedClass, string TypeOfMoped, string RegistrationNumber, string Model, string Color, string Propellent, string Manufacturer, int NumberOfWheels, int YearMade)
         {
-            this.MopedClass = mopedClass;
-            this.TypeOfMoped = typeOfMoped;
-            this.RegistrationNumber = registrationNumber;
-            this.Model = model;
-            this.Color = color;
-            this.Propellant = propellent;
-            this.Manufacturer = manufacturer;
-            this.NumberOfWheels = numberOfWheels;
-            this.YearMade = yearMade;
+            this.MopedClass = MopedClass;
+            this.TypeOfMoped = TypeOfMoped;
+            this.RegistrationNumber = RegistrationNumber;
+            this.Model = Model;
+            this.Color = Color;
+            this.Propellant = Propellent;
+            this.Manufacturer = Manufacturer;
+            this.NumberOfWheels = NumberOfWheels;
+            this.YearMade = YearMade;
         }
 		
 	}
