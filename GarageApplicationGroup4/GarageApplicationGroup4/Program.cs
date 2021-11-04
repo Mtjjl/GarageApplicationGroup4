@@ -15,7 +15,6 @@ namespace GarageApplicationGroup4
             garageMenu.GreetingMessage();
             garageMenu.MenuMethod();
             Console.ReadKey();
-
         }
     }
 }
