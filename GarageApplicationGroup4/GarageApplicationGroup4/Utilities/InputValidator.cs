@@ -37,7 +37,7 @@ namespace GarageApplicationGroup4
                 {
                     Console.Clear();
                     Console.WriteLine($"You have entered an invalid plate number. Plate number must have the following format: ABC123\n");
-                    Break.PleaseWait(2);
+                    Break.PressToContinue();
                 }
             }
             Console.Clear();
