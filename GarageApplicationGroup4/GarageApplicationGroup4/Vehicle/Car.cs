@@ -9,7 +9,7 @@ namespace GarageApplicationGroup4
 	public class Car : Vehicle
 		
 	{
-		public bool isCab { get; set; }'
+		public bool isCab { get; set; }
 		public bool hasTowbar { get; set; }
 		public Car()
 		{
