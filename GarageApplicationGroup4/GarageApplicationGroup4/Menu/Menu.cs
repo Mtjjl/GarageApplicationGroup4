@@ -26,6 +26,7 @@ namespace GarageApplicationGroup4
                         break;
 
                     case "2":
+                        Console.Clear();
                         //Manage.Garage().AddVehicle();
                         break;
 
