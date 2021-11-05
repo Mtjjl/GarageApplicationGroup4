@@ -18,11 +18,14 @@ namespace GarageApplicationGroup4
             //add the sender info that will appear in the email message
             message.From.Add(new MailboxAddress("Grupp 4", "garagegrupp4@gmail.com"));
 
-            //add the reciver email adressOBSBOODSDOSAODASODOASODOASDOSAODOSAOD
+            //add the reciver email adress TEST
             message.To.Add(MailboxAddress.Parse("garagegrupp4@gmail.com"));
 
+            //add the reciver email adress MICKES
+            //message.To.Add(MailboxAddress.Parse("msdata1010@gmail.com"));
+
             //add message subject
-            message.Subject = "Ditt digitala faktura från din parkering hos GarageGrupp4.";
+            message.Subject = "Din digitala faktura från din parkering hos GarageGrupp4.";
 
             //add the message as plain text
             message.Body = new TextPart("plain")
