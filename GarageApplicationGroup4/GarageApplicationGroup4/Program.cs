@@ -10,6 +10,9 @@ namespace GarageApplicationGroup4
     {
         static void Main(string[] args)
         {
+            //Email email = new Email();
+            //email.Emailer();
+
             Menu garageMenu = new Menu();
 
             garageMenu.GreetingMessage();
