@@ -36,11 +36,11 @@ namespace GarageApplicationGroup4
 
 
         //Tar emot ett objekt av typen Vehicle och lägger till det i garaget. Ska eventuellt korrigeras när alla Vehicle-klasser är satta
-        public void AddVehicle(Vehicle vehicle)
+        public void AddVehicle()
         {
             if (garage.vehicles.Count < garage.MaxLimit)
             {
-                garage.vehicles.Add(vehicle);
+                garage.vehicles.Add(Vehicle.GetNewVehicle());
                 Console.WriteLine("Vehicle added successfully.");
                 Break.PressToContinue();
             }
@@ -158,7 +158,7 @@ namespace GarageApplicationGroup4
             try
             {
                 //Serialize: File.Create-- > Skapar, eller "uppdaterar" en fil.
-                Stream stream = File.Create(Environment.CurrentDirectory + "SavedVehicles.xml");
+                Stream stream = File.Create("SavedVehicles.xml");
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Vehicle>));
                 xmlSerializer.Serialize(stream, garage.vehicles);
                 stream.Close();
@@ -176,14 +176,14 @@ namespace GarageApplicationGroup4
         {
             try
             {
-                if (!File.Exists(Environment.CurrentDirectory + "SavedVehicles.xml"))
+                if (!File.Exists("SavedVehicles.xml"))
                 {
-                    File.Create(Environment.CurrentDirectory + "SavedVehicles.xml");
+                    Save();
                 }
                 else
                 {
                     XmlSerializer xmlDeserializer = new XmlSerializer(typeof(List<Vehicle>));
-                    using (FileStream streamReader = File.Open(Environment.CurrentDirectory + "SavedVehicles.xml", FileMode.Open))
+                    using (FileStream streamReader = File.Open("SavedVehicles.xml", FileMode.Open))
                     {
                         garage.vehicles = (List<Vehicle>)xmlDeserializer.Deserialize(streamReader);
 
