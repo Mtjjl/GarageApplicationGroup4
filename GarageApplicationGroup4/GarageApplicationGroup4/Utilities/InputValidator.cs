@@ -14,8 +14,7 @@ namespace GarageApplicationGroup4
             while (input.ToUpper() != "EXIT")
             {
                 Console.Clear();
-                Console.WriteLine($"Please enter a valid plate number in the following format: ABC123\n" +
-                              $"To go back to the main menu, please type EXIT.");
+                Console.WriteLine($"Please enter a valid plate number in the following format: ABC123\n");
                 input = Console.ReadLine().ToUpper();
 
                 if (input.Length == 6)
@@ -33,7 +32,7 @@ namespace GarageApplicationGroup4
                         return true;
                     }
                 }
-                else if (input != "EXIT")
+                else
                 {
                     Console.Clear();
                     Console.WriteLine($"You have entered an invalid plate number. Plate number must have the following format: ABC123\n");
@@ -61,6 +60,43 @@ namespace GarageApplicationGroup4
             return validNumber;
         }
 
+        public static string GetString(string info)
+        {
+            Console.WriteLine(info);
+            string output = Console.ReadLine();
+            Break.PleaseWait(2);
+            return output;
+        }
 
+        public static bool GetYesOrNo(string inputInfo)
+        {
+            bool inputAccepted = false;
+
+            while (!inputAccepted)
+            {
+                Console.WriteLine($"{inputInfo} Press [Y] for Yes and [N] for no.");
+                char input = Console.ReadKey().KeyChar;
+
+                switch (input)
+                {
+                    case 'y':
+                        Console.Clear();
+                        return true;
+                    case 'n':
+                        Console.Clear();
+                        return false;
+                    case 'Y':
+                        Console.Clear();
+                        return true;
+                    case 'N':
+                        Console.Clear();
+                        return false;
+                    default:
+                        Console.Clear();
+                        break;
+                }
+            }
+            return false;
+        }
     }
 }

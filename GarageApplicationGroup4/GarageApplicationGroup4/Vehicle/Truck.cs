@@ -21,6 +21,13 @@
 			this.Color = Color;
 
 		}
+
+		public static Truck NewTruck(string plateNumber, string manufacturer, string model, string color, string propellant, int wheels, int yearMade)
+        {
+			string weightclass = Validate.GetString("What weight class is it?");
+			int weightpulled = Validate.GetValidNumber("How much weight can it pull? In tons.", 1, 15);
+			return new Truck(weightclass, weightpulled, plateNumber, model, color, propellant, manufacturer, wheels, yearMade);
+        }
 	}
 
 

@@ -21,6 +21,13 @@
 			this.PassangerNo = PassangerNo;
 			this.IsDoubleDecker = isDoubleDecker;
 		}
+
+		public static Bus NewBus(string plateNumber, string manufacturer, string model, string color, string propellant, int wheels, int yearMade)
+        {
+			int numberOfPassengers = Validate.GetValidNumber("How many passengers can it carry?", 10, 100);
+			bool isDoubleDecker = Validate.GetYesOrNo("Is it a doubledecker?");
+			return new Bus(numberOfPassengers, isDoubleDecker, plateNumber, model, color, propellant, manufacturer, wheels, yearMade);
+        }
 	}
 
 }

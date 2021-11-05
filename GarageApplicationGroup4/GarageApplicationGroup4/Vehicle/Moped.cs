@@ -19,6 +19,13 @@
             this.NumberOfWheels = NumberOfWheels;
             this.YearMade = YearMade;
         }
+
+        public static Moped NewMoped(string plateNumber, string manufacturer, string model, string color, string propellant, int wheels, int yearMade)
+        {
+            string mopedclass = Validate.GetString("What moped class is it?");
+            string typeofMoped = Validate.GetString("What type of moped is it?");
+            return new Moped(mopedclass, typeofMoped, plateNumber, model, color, propellant, manufacturer, wheels, yearMade);
+        }
 		
 	}
 

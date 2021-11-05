@@ -36,11 +36,11 @@ namespace GarageApplicationGroup4
 
 
         //Tar emot ett objekt av typen Vehicle och lägger till det i garaget. Ska eventuellt korrigeras när alla Vehicle-klasser är satta
-        public void AddVehicle(Vehicle vehicle)
+        public void AddVehicle()
         {
             if (garage.vehicles.Count < garage.MaxLimit)
             {
-                garage.vehicles.Add(vehicle);
+                garage.vehicles.Add(Vehicle.GetNewVehicle());
                 Console.WriteLine("Vehicle added successfully.");
                 Break.PressToContinue();
             }
