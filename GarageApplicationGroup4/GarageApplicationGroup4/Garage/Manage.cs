@@ -158,7 +158,7 @@ namespace GarageApplicationGroup4
             try
             {
                 //Serialize: File.Create-- > Skapar, eller "uppdaterar" en fil.
-                Stream stream = File.Create(Environment.CurrentDirectory + "SavedVehicles.xml");
+                Stream stream = File.Create("SavedVehicles.xml");
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Vehicle>));
                 xmlSerializer.Serialize(stream, garage.vehicles);
                 stream.Close();
@@ -176,14 +176,14 @@ namespace GarageApplicationGroup4
         {
             try
             {
-                if (!File.Exists(Environment.CurrentDirectory + "SavedVehicles.xml"))
+                if (!File.Exists("SavedVehicles.xml"))
                 {
-                    File.Create(Environment.CurrentDirectory + "SavedVehicles.xml");
+                    Save();
                 }
                 else
                 {
                     XmlSerializer xmlDeserializer = new XmlSerializer(typeof(List<Vehicle>));
-                    using (FileStream streamReader = File.Open(Environment.CurrentDirectory + "SavedVehicles.xml", FileMode.Open))
+                    using (FileStream streamReader = File.Open("SavedVehicles.xml", FileMode.Open))
                     {
                         garage.vehicles = (List<Vehicle>)xmlDeserializer.Deserialize(streamReader);
 
