@@ -20,6 +20,13 @@
 			this.WeightClass = WeightClass;
 			this.NumberOfWheels = NumberOfWheels;
 		}
+
+		public static Motorcycle NewMotorcycle(string plateNumber, string manufacturer, string model, string color, string propellant, int wheels, int yearMade)
+		{
+			string weightclass = Validate.GetString("What weight class is it?");
+			int numberOfCC = Validate.GetValidNumber("What CC does it have?", 50, 2000);
+			return new Motorcycle(plateNumber, model, manufacturer, yearMade, propellant, color, wheels, weightclass, numberOfCC);
+		}
 	}
 
 }
