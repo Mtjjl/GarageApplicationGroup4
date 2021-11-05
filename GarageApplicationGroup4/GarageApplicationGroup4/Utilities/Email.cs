@@ -49,7 +49,7 @@ namespace GarageApplicationGroup4
                 client.Send(message);
 
                 //display a message if no exception thrown.
-                Console.WriteLine("Email sent!.");
+                Console.WriteLine("Email sent!");
             }
             catch (Exception ex)
             {
