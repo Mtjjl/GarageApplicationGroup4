@@ -26,7 +26,7 @@ namespace GarageApplicationGroup4
                         break;
 
                     case "2":
-                        //AddVehicle();
+                        //Manage.Garage().AddVehicle();
                         break;
 
                     case "3":
@@ -73,9 +73,10 @@ namespace GarageApplicationGroup4
                 Console.WriteLine("[1] See all vehicles" +
                 "\n[2] See all cars" +
                 "\n[3] See all trucks" +
-                "\n[4] See all motorcycles" +
-                "\n[5] See all mopeds" +
-                "\n[6] Back to main menu");
+                "\n[4] See all buses" +
+                "\n[5] See all motorcycles" +
+                "\n[6] See all mopeds" +
+                "\n[7] Back to main menu");
 
                 switch (Console.ReadLine())
                 {
@@ -99,17 +100,23 @@ namespace GarageApplicationGroup4
 
                     case "4":
                         Console.Clear();
-                        Manage.Garage().ListVehiclesOfType<Motorcycle>();
+                        Manage.Garage().ListVehiclesOfType<Bus>();
                         Console.Clear();
                         break;
 
                     case "5":
                         Console.Clear();
-                        Manage.Garage().ListVehiclesOfType<Moped>();
+                        Manage.Garage().ListVehiclesOfType<Motorcycle>();
                         Console.Clear();
                         break;
 
                     case "6":
+                        Console.Clear();
+                        Manage.Garage().ListVehiclesOfType<Moped>();
+                        Console.Clear();
+                        break;
+
+                    case "7":
                         Console.Clear();
                         isRunning = false;
                         break;
