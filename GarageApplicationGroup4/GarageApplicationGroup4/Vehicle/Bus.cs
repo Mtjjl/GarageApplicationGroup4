@@ -1,4 +1,4 @@
-﻿namespace GarageApplicationGroup4
+﻿3namespace GarageApplicationGroup4
 {
 
 	public class Bus : Vehicle

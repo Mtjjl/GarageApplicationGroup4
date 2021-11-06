@@ -17,7 +17,7 @@
 			this.Propellant = Propellant;
 			this.NumberOfWheels = NumberOfWheels;
 			this.Manufacturer = Manufacturer;
-			this. Model = Model;
+			this.Model = Model;
 			this.Color = Color;
 
 		}

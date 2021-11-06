@@ -12,7 +12,8 @@ namespace GarageApplicationGroup4
     [XmlInclude(typeof(Moped))]
     [XmlInclude(typeof(Motorcycle))]
     [XmlInclude(typeof(Truck))]
-    public class Vehicle
+    public 
+        class Vehicle
     {
 
         public string RegistrationNumber
