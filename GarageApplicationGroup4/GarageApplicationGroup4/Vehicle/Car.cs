@@ -1,4 +1,5 @@
-﻿namespace GarageApplicationGroup4
+﻿using System;
+namespace GarageApplicationGroup4
 {
 	public class Car : Vehicle
 		
@@ -29,5 +30,4 @@
 			return new Car(isCab, hasTowbar, plateNumber, model, color, propellant, manufacturer, wheels, yearMade);
 		}
 	}
-
 }
