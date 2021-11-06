@@ -14,7 +14,20 @@ namespace GarageApplicationGroup4
             int mN = Garage<Vehicle>.Get().MaxLimit;
             int fS = (mN - pN);
 
-            Console.WriteLine("                                                                                 ________________________________");
+
+
+            Console.WriteLine("");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine(@"                                                                                        //    ======    \\  ");
+            Console.WriteLine(@"                                                                                        ||   ||    \\   ||  ");
+            Console.WriteLine("                                                                                        ||   ||     ||  ||   ");
+            Console.WriteLine("                                                                                        ||   ||    //   ||   ");
+            Console.WriteLine("                                                                                        ||   ||====     ||   ");
+            Console.WriteLine("                                                                                        ||   ||         ||   ");
+            Console.WriteLine(@"                                                                                        \\   ||         //  ");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine("                                                                                                 |           ");
+            Console.WriteLine("                                                                                 _______________________________");
             Console.WriteLine("                                                                                 | Parked vehicles: " + pN + "           | ");
             Console.WriteLine("                                                                                 | Free spots: " + fS + "                | ");
             Console.WriteLine("                                                                                 | Max allowed vehicles: " + mN + "     | ");
@@ -32,6 +45,17 @@ namespace GarageApplicationGroup4
             Console.ReadKey();
             Console.Clear();
 
+            Console.WriteLine("");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine(@"                                                                                        //    ======    \\  ");
+            Console.WriteLine(@"                                                                                        ||   ||    \\   ||  ");
+            Console.WriteLine("                                                                                        ||   ||     ||  ||   ");
+            Console.WriteLine("                                                                                        ||   ||    //   ||   ");
+            Console.WriteLine("                                                                                        ||   ||====     ||   ");
+            Console.WriteLine("                                                                                        ||   ||         ||   ");
+            Console.WriteLine(@"                                                                                        \\   ||         //  ");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine("                                                                                                 |           ");
             Console.WriteLine("                                                                                 ________________________________");
             Console.WriteLine("                                                                                 | Parked vehicles: " + pN + "           | ");
             Console.WriteLine("                                                                                 | Free spots: " + fS + "                | ");
@@ -50,6 +74,17 @@ namespace GarageApplicationGroup4
             Console.ReadKey();
             Console.Clear();
 
+            Console.WriteLine("");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine(@"                                                                                        //    ======    \\  ");
+            Console.WriteLine(@"                                                                                        ||   ||    \\   ||  ");
+            Console.WriteLine("                                                                                        ||   ||     ||  ||   ");
+            Console.WriteLine("                                                                                        ||   ||    //   ||   ");
+            Console.WriteLine("                                                                                        ||   ||====     ||   ");
+            Console.WriteLine("                                                                                        ||   ||         ||   ");
+            Console.WriteLine(@"                                                                                        \\   ||         //  ");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine("                                                                                                 |           ");
             Console.WriteLine("                                                                                 ________________________________");
             Console.WriteLine("                                                                                 | Parked vehicles: " + pN + "           | ");
             Console.WriteLine("                                                                                 | Free spots: " + fS + "                | ");
@@ -68,6 +103,17 @@ namespace GarageApplicationGroup4
             Console.ReadKey();
             Console.Clear();
 
+            Console.WriteLine("");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine(@"                                                                                        //    ======    \\  ");
+            Console.WriteLine(@"                                                                                        ||   ||    \\   ||  ");
+            Console.WriteLine("                                                                                        ||   ||     ||  ||   ");
+            Console.WriteLine("                                                                                        ||   ||    //   ||   ");
+            Console.WriteLine("                                                                                        ||   ||====     ||   ");
+            Console.WriteLine("                                                                                        ||   ||         ||   ");
+            Console.WriteLine(@"                                                                                        \\   ||         //  ");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine("                                                                                                 |           ");
             Console.WriteLine("                                                                                 ________________________________");
             Console.WriteLine("                                                                                 | Parked vehicles: " + pN + "           | ");
             Console.WriteLine("                                                                                 | Free spots: " + fS + "                | ");
@@ -86,6 +132,17 @@ namespace GarageApplicationGroup4
             Console.ReadKey();
             Console.Clear();
 
+            Console.WriteLine("");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine(@"                                                                                        //    ======    \\  ");
+            Console.WriteLine(@"                                                                                        ||   ||    \\   ||  ");
+            Console.WriteLine("                                                                                        ||   ||     ||  ||   ");
+            Console.WriteLine("                                                                                        ||   ||    //   ||   ");
+            Console.WriteLine("                                                                                        ||   ||====     ||   ");
+            Console.WriteLine("                                                                                        ||   ||         ||   ");
+            Console.WriteLine(@"                                                                                        \\   ||         //  ");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine("                                                                                                 |           ");
             Console.WriteLine("                                                                                 ________________________________");
             Console.WriteLine("                                                                                 | Parked vehicles: " + pN + "           | ");
             Console.WriteLine("                                                                                 | Free spots: " + fS + "                | ");
@@ -104,6 +161,17 @@ namespace GarageApplicationGroup4
             Console.ReadKey();
             Console.Clear();
 
+            Console.WriteLine("");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine(@"                                                                                        //    ======    \\  ");
+            Console.WriteLine(@"                                                                                        ||   ||    \\   ||  ");
+            Console.WriteLine("                                                                                        ||   ||     ||  ||   ");
+            Console.WriteLine("                                                                                        ||   ||    //   ||   ");
+            Console.WriteLine("                                                                                        ||   ||====     ||   ");
+            Console.WriteLine("                                                                                        ||   ||         ||   ");
+            Console.WriteLine(@"                                                                                        \\   ||         //  ");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine("                                                                                                 |           ");
             Console.WriteLine("                                                                                 ________________________________");
             Console.WriteLine("                                                                                 | Parked vehicles: " + pN + "           | ");
             Console.WriteLine("                                                                                 | Free spots: " + fS + "                | ");
@@ -122,6 +190,17 @@ namespace GarageApplicationGroup4
             Console.ReadKey();
             Console.Clear();
 
+            Console.WriteLine("");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine(@"                                                                                        //    ======    \\  ");
+            Console.WriteLine(@"                                                                                        ||   ||    \\   ||  ");
+            Console.WriteLine("                                                                                        ||   ||     ||  ||   ");
+            Console.WriteLine("                                                                                        ||   ||    //   ||   ");
+            Console.WriteLine("                                                                                        ||   ||====     ||   ");
+            Console.WriteLine("                                                                                        ||   ||         ||   ");
+            Console.WriteLine(@"                                                                                        \\   ||         //  ");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine("                                                                                                 |           ");
             Console.WriteLine("                                                                                 ________________________________");
             Console.WriteLine("                                                                                 | Parked vehicles: " + pN + "           | ");
             Console.WriteLine("                                                                                 | Free spots: " + fS + "                | ");
@@ -140,6 +219,17 @@ namespace GarageApplicationGroup4
             Console.ReadKey();
             Console.Clear();
 
+            Console.WriteLine("");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine(@"                                                                                        //    ======    \\  ");
+            Console.WriteLine(@"                                                                                        ||   ||    \\   ||  ");
+            Console.WriteLine("                                                                                        ||   ||     ||  ||   ");
+            Console.WriteLine("                                                                                        ||   ||    //   ||   ");
+            Console.WriteLine("                                                                                        ||   ||====     ||   ");
+            Console.WriteLine("                                                                                        ||   ||         ||   ");
+            Console.WriteLine(@"                                                                                        \\   ||         //  ");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine("                                                                                                 |           ");
             Console.WriteLine("                                                                                 ________________________________");
             Console.WriteLine("                                                                                 | Parked vehicles: " + pN + "           | ");
             Console.WriteLine("                                                                                 | Free spots: " + fS + "                | ");
@@ -158,6 +248,17 @@ namespace GarageApplicationGroup4
             Console.ReadKey();
             Console.Clear();
 
+            Console.WriteLine("");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine(@"                                                                                        //    ======    \\  ");
+            Console.WriteLine(@"                                                                                        ||   ||    \\   ||  ");
+            Console.WriteLine("                                                                                        ||   ||     ||  ||   ");
+            Console.WriteLine("                                                                                        ||   ||    //   ||   ");
+            Console.WriteLine("                                                                                        ||   ||====     ||   ");
+            Console.WriteLine("                                                                                        ||   ||         ||   ");
+            Console.WriteLine(@"                                                                                        \\   ||         //  ");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine("                                                                                                 |           ");
             Console.WriteLine("                                                                                 ________________________________"); 
             Console.WriteLine("                                                                                 | Parked vehicles: "+pN+"           | "); 
             Console.WriteLine("                                                                                 | Free spots: "+fS+"                | ");
@@ -176,6 +277,17 @@ namespace GarageApplicationGroup4
             Console.ReadKey();
             Console.Clear();
 
+            Console.WriteLine("");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine(@"                                                                                        //    ======    \\  ");
+            Console.WriteLine(@"                                                                                        ||   ||    \\   ||  ");
+            Console.WriteLine("                                                                                        ||   ||     ||  ||   ");
+            Console.WriteLine("                                                                                        ||   ||    //   ||   ");
+            Console.WriteLine("                                                                                        ||   ||====     ||   ");
+            Console.WriteLine("                                                                                        ||   ||         ||   ");
+            Console.WriteLine(@"                                                                                        \\   ||         //  ");
+            Console.WriteLine("                                                                                          ==============     ");
+            Console.WriteLine("                                                                                                 |           ");
             Console.WriteLine("                                                                                 ________________________________");
             Console.WriteLine("                                                                                 | Parked vehicles: " + pN + "           | ");
             Console.WriteLine("                                                                                 | Free spots: " + fS + "                | ");
@@ -193,6 +305,8 @@ namespace GarageApplicationGroup4
             Console.WriteLine("                                                PRESS ANY KEY TO ENTER MENU           ");
             Console.ReadKey();
             Console.Clear();
+
+
         }
     }
 }
