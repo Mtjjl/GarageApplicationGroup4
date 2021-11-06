@@ -10,14 +10,14 @@ namespace GarageApplicationGroup4
     {
         static void Main(string[] args)
         {
-            //Email email = new Email();
-            //email.Emailer();
+            Graphics graphs = new Graphics();
+            graphs.Hellomessage();
 
-            Menu garageMenu = new Menu();
+            //Menu garageMenu = new Menu();
 
-            garageMenu.GreetingMessage();
-            garageMenu.MenuMethod();
-            Console.ReadKey();
+            //garageMenu.GreetingMessage();
+            //garageMenu.MenuMethod();
+            //Console.ReadKey();
         }
     }
 }
