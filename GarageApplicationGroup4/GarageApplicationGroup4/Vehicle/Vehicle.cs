@@ -33,31 +33,30 @@ namespace GarageApplicationGroup4
 
         public static Vehicle GetNewVehicle()
         {
-            int choice = Validate.GetValidNumber("What type of vehicle would you like to park?\n[1] Car \n[2] Bus\n[3] Moped\n[4] Motocycle\n[5] Truck", 1, 5);
+            int choice = Validate.GetValidNumber("What type of vehicle would you like to park?\n[1] Car \n[2] Bus\n[3] Moped\n[4] Motorcycle\n[5] Truck", 1, 5);
             Validate.GetValidPlateNumber(out string plateNumber);
-            string manufacturer = Validate.GetString("What's the manufacturer?");
-            string model = Validate.GetString("What model is it?");
-            string color = Validate.GetString("What color is it?");
-            string propellant = Validate.GetString("What propellant is it?");
-            int wheels = Validate.GetValidNumber("How many wheels does it have?", 2, 8);
+            string manufacturer = Validate.GetValidString("What's the manufacturer?");
+            string model = Validate.GetValidString("What model is it?");
+            string color = Validate.GetValidString("What color is it?");
+            string propellant = Validate.GetValidString("What propellant does it use?", "Fuel", "Petrol", "Biofuel", "Electricity");
             int yearMade = Validate.GetValidNumber("When was it made?", 1950, 2021);
 
             switch (choice)
             {
                 case 1:
-                    return Car.NewCar(plateNumber, manufacturer, model, color, propellant, wheels, yearMade);
+                    return Car.NewCar(plateNumber, manufacturer, model, color, propellant, yearMade);
 
                 case 2:
-                    return Bus.NewBus(plateNumber, manufacturer, model, color, propellant, wheels, yearMade);
+                    return Bus.NewBus(plateNumber, manufacturer, model, color, propellant, yearMade);
 
                 case 3:
-                    return Moped.NewMoped(plateNumber, manufacturer, model, color, propellant, wheels, yearMade);
+                    return Moped.NewMoped(plateNumber, manufacturer, model, color, propellant, yearMade);
 
                 case 4:
-                    return Motorcycle.NewMotorcycle(plateNumber, manufacturer, model, color, propellant, wheels, yearMade);
+                    return Motorcycle.NewMotorcycle(plateNumber, manufacturer, model, color, propellant, yearMade);
 
                 case 5:
-                    return Truck.NewTruck(plateNumber, manufacturer, model, color, propellant, wheels, yearMade);
+                    return Truck.NewTruck(plateNumber, manufacturer, model, color, propellant, yearMade);
             }
             return null;
         }

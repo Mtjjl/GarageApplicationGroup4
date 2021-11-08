@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace GarageApplicationGroup4
 {
@@ -41,8 +41,8 @@ namespace GarageApplicationGroup4
             Console.WriteLine("    |_____( ¤ )__________________( ¤ )_________|                                 ||                            ||");
             Console.WriteLine("...........'''....................'''............................................||............................||.....");
             Console.WriteLine("");
-            Console.WriteLine("                                                PRESS ANY KEY           ");
-            Console.ReadKey();
+            Console.WriteLine("");
+            Thread.Sleep(100);
             Console.Clear();
 
             Console.WriteLine("");
@@ -70,8 +70,8 @@ namespace GarageApplicationGroup4
             Console.WriteLine("       |_____( ¤ )__________________( ¤ )_________|                              ||                            ||");
             Console.WriteLine("..............'''....................'''.........................................||............................||.....");
             Console.WriteLine("");
-            Console.WriteLine("                                                PRESS ANY KEY           ");
-            Console.ReadKey();
+            Console.WriteLine("");
+            Thread.Sleep(100);
             Console.Clear();
 
             Console.WriteLine("");
@@ -99,8 +99,8 @@ namespace GarageApplicationGroup4
             Console.WriteLine("           |_____( ¤ )__________________( ¤ )_________|                          ||                            ||");
             Console.WriteLine("..................'''....................'''.....................................||............................||.....");
             Console.WriteLine("");
-            Console.WriteLine("                                                PRESS ANY KEY           ");
-            Console.ReadKey();
+            Console.WriteLine("");
+            Thread.Sleep(100);
             Console.Clear();
 
             Console.WriteLine("");
@@ -128,8 +128,8 @@ namespace GarageApplicationGroup4
             Console.WriteLine("              |_____( ¤ )__________________( ¤ )_________|                       ||                            ||");
             Console.WriteLine(".....................'''....................'''..................................||............................||.....");
             Console.WriteLine("");
-            Console.WriteLine("                                                PRESS ANY KEY           ");
-            Console.ReadKey();
+            Console.WriteLine("");
+            Thread.Sleep(100);
             Console.Clear();
 
             Console.WriteLine("");
@@ -157,8 +157,8 @@ namespace GarageApplicationGroup4
             Console.WriteLine("                 |_____( ¤ )__________________( ¤ )_________|                    ||                            ||");
             Console.WriteLine("........................'''....................'''...............................||............................||.....");
             Console.WriteLine("");
-            Console.WriteLine("                                                PRESS ANY KEY           ");
-            Console.ReadKey();
+            Console.WriteLine("");
+            Thread.Sleep(100);
             Console.Clear();
 
             Console.WriteLine("");
@@ -186,8 +186,8 @@ namespace GarageApplicationGroup4
             Console.WriteLine("                    |_____( ¤ )__________________( ¤ )_________|                 ||                            ||");
             Console.WriteLine("...........................'''....................'''............................||............................||.....");
             Console.WriteLine("");
-            Console.WriteLine("                                                PRESS ANY KEY           ");
-            Console.ReadKey();
+            Console.WriteLine("");
+            Thread.Sleep(100);
             Console.Clear();
 
             Console.WriteLine("");
@@ -215,8 +215,8 @@ namespace GarageApplicationGroup4
             Console.WriteLine("                       |_____( ¤ )__________________( ¤ )_________|              ||                            ||");
             Console.WriteLine("..............................'''....................'''.........................||............................||.....");
             Console.WriteLine("");
-            Console.WriteLine("                                                PRESS ANY KEY           ");
-            Console.ReadKey();
+            Console.WriteLine("");
+            Thread.Sleep(100);
             Console.Clear();
 
             Console.WriteLine("");
@@ -244,8 +244,8 @@ namespace GarageApplicationGroup4
             Console.WriteLine("                           |_____( ¤ )__________________( ¤ )_________|          ||                            ||");
             Console.WriteLine("..................................'''....................'''.....................||............................||.....");
             Console.WriteLine("");
-            Console.WriteLine("                                                PRESS ANY KEY           ");
-            Console.ReadKey();
+            Console.WriteLine("");
+            Thread.Sleep(100);
             Console.Clear();
 
             Console.WriteLine("");
@@ -273,8 +273,8 @@ namespace GarageApplicationGroup4
             Console.WriteLine("                                 |_____( ¤ )__________________( ¤ )_________|    ||                            ||");
             Console.WriteLine("........................................'''....................'''...............||............................||.....");
             Console.WriteLine("");
-            Console.WriteLine("                                                PRESS ANY KEY TO ENTER MENU         ");
-            Console.ReadKey();
+            Console.WriteLine("");
+            Thread.Sleep(100);
             Console.Clear();
 
             Console.WriteLine("");

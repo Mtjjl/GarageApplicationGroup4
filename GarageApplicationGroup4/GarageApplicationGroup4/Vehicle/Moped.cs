@@ -7,7 +7,7 @@
         public Moped()
 		{
 		}
-        public Moped(string MopedClass, string TypeOfMoped, string RegistrationNumber, string Model, string Color, string Propellent, string Manufacturer, int NumberOfWheels, int YearMade)
+        public Moped(string MopedClass, string TypeOfMoped, string RegistrationNumber, string Model, string Color, string Propellent, string Manufacturer, int YearMade)
         {
             this.MopedClass = MopedClass;
             this.TypeOfMoped = TypeOfMoped;
@@ -16,15 +16,15 @@
             this.Color = Color;
             this.Propellant = Propellent;
             this.Manufacturer = Manufacturer;
-            this.NumberOfWheels = NumberOfWheels;
+            this.NumberOfWheels = 2;
             this.YearMade = YearMade;
         }
 
-        public static Moped NewMoped(string plateNumber, string manufacturer, string model, string color, string propellant, int wheels, int yearMade)
+        public static Moped NewMoped(string plateNumber, string manufacturer, string model, string color, string propellant, int yearMade)
         {
-            string mopedclass = Validate.GetString("What moped class is it?");
-            string typeofMoped = Validate.GetString("What type of moped is it?");
-            return new Moped(mopedclass, typeofMoped, plateNumber, model, color, propellant, manufacturer, wheels, yearMade);
+            string mopedclass = Validate.GetValidString("What moped class is it?");
+            string typeofMoped = Validate.GetValidString("What type of moped is it?");
+            return new Moped(mopedclass, typeofMoped, plateNumber, model, color, propellant, manufacturer, yearMade);
         }
     }
 
