@@ -27,7 +27,7 @@ namespace GarageApplicationGroup4
             Console.WriteLine("Before the application can start, we need to know which garage you want to use.\n");
             Thread.Sleep(1000);
             ListAllFiles();
-            string name = Validate.GetValidString("To add a new garage, enter the name you want to give it.");
+            string name = Validate.GetValidString("To add a new garage, enter the name you want to give it.").ToLower();
             
             Garage<Vehicle> garage = new Garage<Vehicle>(name);
             manage = new Manage(garage);
