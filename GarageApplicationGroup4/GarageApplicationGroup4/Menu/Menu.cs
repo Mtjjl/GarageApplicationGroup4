@@ -44,7 +44,10 @@ namespace GarageApplicationGroup4
 
                     case "5":
                         Console.Clear();
-                        Console.WriteLine("You have decided to exit the Garage.\nBye bye!");
+                        Console.WriteLine("You have decided to exit the Garage." +
+                            "\nYour digital invoice has been sent to your email.\n\nBye bye!\n");
+                        Email email = new Email();
+                        email.Emailer();
                         Manage.Garage().Save();
                         isRunning = false;
                         break;

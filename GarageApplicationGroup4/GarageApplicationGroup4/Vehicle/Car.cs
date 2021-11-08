@@ -1,4 +1,5 @@
-﻿namespace GarageApplicationGroup4
+﻿using System;
+namespace GarageApplicationGroup4
 {
 	public class Car : Vehicle
 		
@@ -9,7 +10,7 @@
 		{
 
 		}
-		public Car (bool isCab, bool hasTowbar, string RegistrationNumber, string Model, string Color, string Propellant, string Manufacturer, int NumberOfWheels, int YearMade)
+		public Car (bool isCab, bool hasTowbar, string RegistrationNumber, string Model, string Color, string Propellant, string Manufacturer, int YearMade)
 		{
 			this.isCab = isCab;
 			this.hasTowbar = hasTowbar;
@@ -18,16 +19,15 @@
 			this.Propellant = Propellant;
 			this.Model = Model;
 			this.Color = Color;
-			this.NumberOfWheels = NumberOfWheels;
+			this.NumberOfWheels = 4;
 			this.YearMade = YearMade;
 		}
 
-		public static Car NewCar(string plateNumber, string manufacturer, string model, string color, string propellant, int wheels, int yearMade)
+		public static Car NewCar(string plateNumber, string manufacturer, string model, string color, string propellant, int yearMade)
 		{
 			bool isCab = Validate.GetYesOrNo("Is it a cab?");
 			bool hasTowbar = Validate.GetYesOrNo("Does it have a towbar?");
-			return new Car(isCab, hasTowbar, plateNumber, model, color, propellant, manufacturer, wheels, yearMade);
+			return new Car(isCab, hasTowbar, plateNumber, model, color, propellant, manufacturer, yearMade);
 		}
 	}
-
 }
