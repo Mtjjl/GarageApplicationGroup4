@@ -34,7 +34,7 @@ namespace GarageApplicationGroup4
         public static Vehicle GetNewVehicle()
         {
             int choice = Validate.GetValidNumber("What type of vehicle would you like to park?\n[1] Car \n[2] Bus\n[3] Moped\n[4] Motorcycle\n[5] Truck", 1, 5);
-            Validate.GetValidPlateNumber(out string plateNumber);
+            string plateNumber = Validate.GetValidPlateNumber();
             string manufacturer = Validate.GetValidString("What's the manufacturer?");
             string model = Validate.GetValidString("What model is it?");
             string color = Validate.GetValidString("What color is it?");
