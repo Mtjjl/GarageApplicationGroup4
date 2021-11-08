@@ -8,9 +8,9 @@ namespace GarageApplicationGroup4
 {
     static class Validate
     {
-        public static bool IsPlateNumberBusy(string input)
+        public static bool IsPlateNumberBusy(string input, Manage manage)
         {
-            List<string> plateNumbers = Garage<Vehicle>.Get().vehicles
+            List<string> plateNumbers = manage.Garage.vehicles
                             .Select(x => x.RegistrationNumber.ToUpper()).ToList();
 
             if (plateNumbers.Contains(input.ToUpper()))

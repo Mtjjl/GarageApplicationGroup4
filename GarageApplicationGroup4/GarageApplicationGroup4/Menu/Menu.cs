@@ -8,7 +8,7 @@ namespace GarageApplicationGroup4
 {
     class Menu
     {
-        public void MenuMethod(ManageTest manage)
+        public void MenuMethod(Manage manage)
         {
             bool isRunning = true;
             while (isRunning)
@@ -60,13 +60,12 @@ namespace GarageApplicationGroup4
             }
         }
 
-        public void GreetingMessage(ManageTest manage)
+        public void GreetingMessage(Manage manage)
         {
             Console.WriteLine("Welcome to the Garage!\n");
-            manage.Load();
         }
 
-        public void ShowVehicles(ManageTest manage)
+        public void ShowVehicles(Manage manage)
         {
             Console.Clear();
             bool isRunning = true;

@@ -8,7 +8,7 @@ namespace GarageApplicationGroup4
 {
     class Graphics
     {
-        public void Hellomessage(ManageTest manage)
+        public void Hellomessage(Manage manage)
         {
             int pN = manage.Garage.vehicles.Count();
             int mN = manage.Garage.MaxLimit;

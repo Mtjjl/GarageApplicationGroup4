@@ -9,38 +9,21 @@ using System.Xml.Serialization;
 
 namespace GarageApplicationGroup4
 {
-    //Denna klass hanterar vårt Garage<Vehicle>-objekt.
-    class Manage
+    public class Manage
     {
-        /*Skapar en lokal referens till den enda instansen som finns av Garage<T>-klassen, så att
-         * den smidigt kan arbetas med i denna klass utan att man behöver kalla på den varje gång den
-         * ska användas. Istället för "Garage<Vehicle>.Get()", räcker det med "garage".*/
-        private Garage<Vehicle> garage = Garage<Vehicle>.Get();
+        public Garage<Vehicle> Garage { get; set; }
 
-        //Den enda instansen av Manage-klassen som ska finnas i lösningen.
-        private static readonly Manage garageHandler = new Manage();
+        public Manage(Garage<Vehicle> garage)
+        {
+            Garage = garage;
+        }
 
-        //Privat constructor, eftersom inga instanser ska kunna skapas någon annanstans än inom denna klass.
-        private Manage() { }
-
-        /*Via denna metod kan andra klasser komma åt den enda instansen av Manage-klassen som ska finnas.
-         *så i menyn kommer man t.ex. kunna skriva Manage.Garage().ListAllVehicles(); */
-        public static Manage Garage() => garageHandler;
-
-
-
-        /* 
-         -*-*-*-*- NEDAN FÖLJLER ALLA METODER SOM HANTERAR GARAGET -*-*-*-*-
-         */
-
-
-
-        //Tar emot ett objekt av typen Vehicle och lägger till det i garaget. Ska eventuellt korrigeras när alla Vehicle-klasser är satta
+        //Lägger till en ny bil (som skapas via metoden GetNewVehicle) till 
         public void AddVehicle()
         {
-            if (garage.vehicles.Count < garage.MaxLimit)
+            if (Garage.vehicles.Count < Garage.MaxLimit)
             {
-                garage.vehicles.Add(Vehicle.GetNewVehicle());
+                Garage.vehicles.Add(Vehicle.GetNewVehicle(this));
                 Console.WriteLine("Vehicle added successfully.");
                 Break.PressToContinue();
             }
@@ -55,14 +38,14 @@ namespace GarageApplicationGroup4
         //Användaren får också möjligheten att inte ta bort ett fordon.
         public void RemoveVehicle()
         {
-            if (garage.vehicles.Any())
+            if (Garage.vehicles.Any())
             {
                 StringBuilder stringBuilder = new StringBuilder();
                 int index = 1;
 
                 stringBuilder.Append($"Here are all the vehicles in the garage:\n\n");
 
-                foreach (Vehicle vehicle in garage)
+                foreach (Vehicle vehicle in Garage)
                 {
                     stringBuilder.Append($"{index}. {vehicle}\n");
                     index++;
@@ -71,7 +54,7 @@ namespace GarageApplicationGroup4
                 stringBuilder.Append($"\nEnter the number of the vehicle you want to remove." +
                                      $"\nIf you do not wish to remove a vehicle, enter 0");
 
-                int userInput = Validate.GetValidNumber(stringBuilder.ToString(), 0, garage.vehicles.Count) - 1;
+                int userInput = Validate.GetValidNumber(stringBuilder.ToString(), 0, Garage.vehicles.Count) - 1;
 
                 if (userInput < 0)
                 {
@@ -81,7 +64,7 @@ namespace GarageApplicationGroup4
                 }
                 else
                 {
-                    garage.vehicles.RemoveAt(userInput);
+                    Garage.vehicles.RemoveAt(userInput);
                     Console.WriteLine("Vehicle removed successfully.");
                     Break.PleaseWait(3);
                 }
@@ -97,11 +80,11 @@ namespace GarageApplicationGroup4
         //Tar reda på om det om det finns fordon i garaget. Om det finns minst ett skriver den ut alla fordon.
         public void ListAllVehicles()
         {
-            if (garage.vehicles.Any())
+            if (Garage.vehicles.Any())
             {
                 Console.WriteLine("Here are all the vehicles in the garage:\n");
                 int index = 1;
-                foreach (Vehicle vehicle in garage)
+                foreach (Vehicle vehicle in Garage)
                 {
                     Console.WriteLine($"{index}. {vehicle}");
                     index++;
@@ -119,11 +102,11 @@ namespace GarageApplicationGroup4
          * När man kallar på denna metod byts T ut mot en fordonstyp, t.ex. Car...*/
         public void ListVehiclesOfType<T>() where T : Vehicle
         {
-            if (garage.vehicles.OfType<T>().Any())
+            if (Garage.vehicles.OfType<T>().Any())
             {
                 Console.WriteLine("Here are all the vehicles of the chosen type in the garage:\n");
                 int index = 1;
-                foreach (Vehicle vehicle in garage.OfType<T>())
+                foreach (Vehicle vehicle in Garage.OfType<T>())
                 {
                     Console.WriteLine($"{index}. {vehicle}");
                     index++;
@@ -140,9 +123,9 @@ namespace GarageApplicationGroup4
         //Söker igenom alla fordon efter matchande registreringsnummer och talar om huruvida fordonet hittades eller inte.
         public void SearchForVehicle(string licensePlate)
         {
-            foreach (Vehicle vehicle in garage)
+            foreach (Vehicle vehicle in Garage)
             {
-                if (vehicle.RegistrationNumber == licensePlate) 
+                if (vehicle.RegistrationNumber == licensePlate)
                 {
                     Console.WriteLine("The vehicle you searched for is in the garage.");
                     Break.PressToContinue();
@@ -158,9 +141,9 @@ namespace GarageApplicationGroup4
             try
             {
                 //Serialize: File.Create-- > Skapar, eller "uppdaterar" en fil.
-                Stream stream = File.Create("SavedVehicles.xml");
+                Stream stream = File.Create($"SavedVehicles\\{Garage.Name}.xml");
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Vehicle>));
-                xmlSerializer.Serialize(stream, garage.vehicles);
+                xmlSerializer.Serialize(stream, Garage.vehicles);
                 stream.Close();
 
                 //Check in Console
@@ -176,16 +159,16 @@ namespace GarageApplicationGroup4
         {
             try
             {
-                if (!File.Exists("SavedVehicles.xml"))
+                if (!File.Exists($"SavedVehicles\\{Garage.Name}.xml"))
                 {
                     Save();
                 }
                 else
                 {
                     XmlSerializer xmlDeserializer = new XmlSerializer(typeof(List<Vehicle>));
-                    using (FileStream streamReader = File.Open("SavedVehicles.xml", FileMode.Open))
+                    using (FileStream streamReader = File.Open($"SavedVehicles\\{Garage.Name}.xml", FileMode.Open))
                     {
-                        garage.vehicles = (List<Vehicle>)xmlDeserializer.Deserialize(streamReader);
+                        Garage.vehicles = (List<Vehicle>)xmlDeserializer.Deserialize(streamReader);
 
                         //Check in Console
                         //xmlDeserializer.Serialize(Console.Out, Garage<Vehicle>.Get().vehicles);
