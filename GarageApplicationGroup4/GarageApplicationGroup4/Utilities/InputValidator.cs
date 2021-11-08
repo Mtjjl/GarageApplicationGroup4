@@ -8,6 +8,20 @@ namespace GarageApplicationGroup4
 {
     static class Validate
     {
+        public static bool IsPlateNumberBusy(string input)
+        {
+            List<string> plateNumbers = Garage<Vehicle>.Get().vehicles
+                            .Select(x => x.RegistrationNumber.ToUpper()).ToList();
+
+            if (plateNumbers.Contains(input.ToUpper()))
+            {
+                Console.WriteLine("The registration number you tried is already in use. Please enter another one");
+                Break.PressToContinue();
+                return true;
+            }
+            return false;
+        }
+
         public static string GetValidPlateNumber()
         {
             string input = string.Empty;
