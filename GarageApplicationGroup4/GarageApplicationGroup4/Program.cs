@@ -10,15 +10,7 @@ namespace GarageApplicationGroup4
     {
         static void Main(string[] args)
         {
-            Manage.Garage().Load();
-
-            Graphics graphs = new Graphics();
-            graphs.Hellomessage();
-
-            Menu garageMenu = new Menu();
-
-            garageMenu.GreetingMessage();
-            garageMenu.MenuMethod();
+            Start.LaunchApplication();
             Console.ReadKey();
         }
     }

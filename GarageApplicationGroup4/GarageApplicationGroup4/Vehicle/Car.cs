@@ -25,7 +25,7 @@ namespace GarageApplicationGroup4
 
 		public static Car NewCar(string plateNumber, string manufacturer, string model, string color, string propellant, int yearMade)
 		{
-			bool isCab = Validate.GetYesOrNo("Is it a cab?");
+			bool isCab = Validate.GetYesOrNo("Is it a convertible?");
 			bool hasTowbar = Validate.GetYesOrNo("Does it have a towbar?");
 			return new Car(isCab, hasTowbar, plateNumber, model, color, propellant, manufacturer, yearMade);
 		}

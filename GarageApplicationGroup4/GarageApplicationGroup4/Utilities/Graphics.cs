@@ -6,12 +6,12 @@ using System.Threading;
 
 namespace GarageApplicationGroup4
 {
-    public class Graphics
+    class Graphics
     {
-        public void Hellomessage()
+        public void Hellomessage(Manage manage)
         {
-            int pN = Garage<Vehicle>.Get().vehicles.Count();
-            int mN = Garage<Vehicle>.Get().MaxLimit;
+            int pN = manage.Garage.vehicles.Count();
+            int mN = manage.Garage.MaxLimit;
             int fS = (mN - pN);
 
 
