@@ -56,8 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Garage\GarageTest.cs" />
     <Compile Include="Garage\Garage.cs" />
+    <Compile Include="Garage\ManageTest.cs" />
     <Compile Include="Garage\Manage.cs" />
+    <Compile Include="Menu\Start.cs" />
     <Compile Include="Utilities\Graphics.cs" />
     <Compile Include="Menu\Menu.cs" />
     <Compile Include="Program.cs" />

@@ -8,7 +8,7 @@ namespace GarageApplicationGroup4
 {
     class Menu
     {
-        public void MenuMethod()
+        public void MenuMethod(ManageTest manage)
         {
             bool isRunning = true;
             while (isRunning)
@@ -22,22 +22,22 @@ namespace GarageApplicationGroup4
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        ShowVehicles();
+                        ShowVehicles(manage);
                         break;
 
                     case "2":
                         Console.Clear();
-                        Manage.Garage().AddVehicle();
+                        manage.AddVehicle();
                         break;
 
                     case "3":
                         Console.Clear();
-                        Manage.Garage().RemoveVehicle();
+                        manage.RemoveVehicle();
                         break;
 
                     case "4":
                         string plateNumber = Validate.GetValidPlateNumber();
-                        Manage.Garage().SearchForVehicle(plateNumber);
+                        manage.SearchForVehicle(plateNumber);
                         break;
 
                     case "5":
@@ -46,7 +46,7 @@ namespace GarageApplicationGroup4
                             "\nYour digital invoice has been sent to your email.\n\nBye bye!\n");
                         Email email = new Email();
                         email.Emailer();
-                        Manage.Garage().Save();
+                        manage.Save();
                         isRunning = false;
                         break;
 
@@ -60,13 +60,13 @@ namespace GarageApplicationGroup4
             }
         }
 
-        public void GreetingMessage()
+        public void GreetingMessage(ManageTest manage)
         {
             Console.WriteLine("Welcome to the Garage!\n");
-            Manage.Garage().Load();
+            manage.Load();
         }
 
-        public void ShowVehicles()
+        public void ShowVehicles(ManageTest manage)
         {
             Console.Clear();
             bool isRunning = true;
@@ -84,37 +84,37 @@ namespace GarageApplicationGroup4
                 {
                     case "1":
                         Console.Clear();
-                        Manage.Garage().ListAllVehicles();
+                        manage.ListAllVehicles();
                         Console.Clear();
                         break;
 
                     case "2":
                         Console.Clear();
-                        Manage.Garage().ListVehiclesOfType<Car>();
+                        manage.ListVehiclesOfType<Car>();
                         Console.Clear();
                         break;
 
                     case "3":
                         Console.Clear();
-                        Manage.Garage().ListVehiclesOfType<Truck>();
+                        manage.ListVehiclesOfType<Truck>();
                         Console.Clear();
                         break;
 
                     case "4":
                         Console.Clear();
-                        Manage.Garage().ListVehiclesOfType<Bus>();
+                        manage.ListVehiclesOfType<Bus>();
                         Console.Clear();
                         break;
 
                     case "5":
                         Console.Clear();
-                        Manage.Garage().ListVehiclesOfType<Motorcycle>();
+                        manage.ListVehiclesOfType<Motorcycle>();
                         Console.Clear();
                         break;
 
                     case "6":
                         Console.Clear();
-                        Manage.Garage().ListVehiclesOfType<Moped>();
+                        manage.ListVehiclesOfType<Moped>();
                         Console.Clear();
                         break;
 
