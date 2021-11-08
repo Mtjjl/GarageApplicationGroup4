@@ -40,44 +40,6 @@ namespace GarageApplicationGroup4
             return "";
         }
 
-
-
-
-        public static bool GetValidPlateNumber(out string input)
-        {
-            input = string.Empty;
-            while (input.ToUpper() != "EXIT")
-            {
-                Console.Clear();
-                Console.WriteLine($"Please enter a valid plate number in the following format: ABC123\n");
-                input = Console.ReadLine().ToUpper().Trim();
-
-                if (input.Length == 6)
-                {
-                    if (
-                        Char.IsLetter(input[0])
-                        && Char.IsLetter(input[1])
-                        && Char.IsLetter(input[2])
-                        && Char.IsNumber(input[3])
-                        && Char.IsNumber(input[4])
-                        && Char.IsNumber(input[5])
-                        )
-                    {
-                        Console.Clear();
-                        return true;
-                    }
-                }
-                else
-                {
-                    Console.Clear();
-                    Console.WriteLine($"You have entered an invalid plate number. Plate number must have the following format: ABC123\n");
-                    Break.PressToContinue();
-                }
-            }
-            Console.Clear();
-            return false;
-        }
-
         public static int GetValidNumber(string info, int min, int max)
         {
             bool inputAccepted = false;
