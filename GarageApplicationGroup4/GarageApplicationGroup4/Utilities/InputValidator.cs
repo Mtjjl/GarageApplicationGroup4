@@ -15,7 +15,7 @@ namespace GarageApplicationGroup4
             {
                 Console.Clear();
                 Console.WriteLine($"Please enter a valid plate number in the following format: ABC123\n");
-                input = Console.ReadLine().ToUpper();
+                input = Console.ReadLine().ToUpper().Trim();
 
                 if (input.Length == 6)
                 {
@@ -53,18 +53,48 @@ namespace GarageApplicationGroup4
                 Console.Clear();
                 Console.WriteLine(info);
                 Console.WriteLine($"\nEnter a number between {min} and {max}");
-                inputAccepted = Int32.TryParse(Console.ReadLine(), out validNumber);
+                inputAccepted = Int32.TryParse(Console.ReadLine().Trim(), out validNumber);
             }
 
             Console.Clear();
             return validNumber;
         }
 
-        public static string GetString(string info)
+        public static string GetValidString(string info)
         {
             Console.WriteLine(info);
-            string output = Console.ReadLine();
+            string output = Console.ReadLine().Trim();
             Console.Clear();
+            return output;
+        }
+
+        public static string GetValidString(string info, params string[] choices)
+        {
+            bool inputAccepted = false;
+            string output = "";
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < choices.Length; i++)
+            {
+                stringBuilder.Append(choices[i] + "\n");
+            }
+
+            while (!inputAccepted)
+            {
+                Console.WriteLine(info + "\nChose between the following:\n");
+                Console.WriteLine(stringBuilder.ToString());
+                output = Console.ReadLine().Trim();
+
+                for (int i = 0; i < choices.Length; i++)
+                {
+                    if (output.ToLower() == choices[i].ToLower())
+                    {
+                        inputAccepted = true;
+                        Console.Clear();
+                        return choices[i];
+                    }
+                }
+                Console.Clear();
+            }
             return output;
         }
 
