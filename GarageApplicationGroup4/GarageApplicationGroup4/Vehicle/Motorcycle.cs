@@ -30,6 +30,11 @@ namespace GarageApplicationGroup4
 			int wheels = Convert.ToInt32(Validate.GetValidString("How many wheels does it have?", "2", "3", "4"));
 			return new Motorcycle(plateNumber, model, manufacturer, yearMade, propellant, color, wheels, weightclass, numberOfCC);
 		}
+
+		public override string ToString()
+		{
+			return $"A {Color.ToLower()} motorcycle ({Manufacturer} {Model}) with the following registration number: {RegistrationNumber}";
+		}
 	}
 
 }

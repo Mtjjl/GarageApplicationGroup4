@@ -29,5 +29,9 @@ namespace GarageApplicationGroup4
 			bool hasTowbar = Validate.GetYesOrNo("Does it have a towbar?");
 			return new Car(isCab, hasTowbar, plateNumber, model, color, propellant, manufacturer, yearMade);
 		}
+		public override string ToString()
+		{
+			return $"A {Color.ToLower()} car ({Manufacturer} {Model}) with the following registration number: {RegistrationNumber}";
+		}
 	}
 }

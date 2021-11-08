@@ -26,6 +26,10 @@
             string typeofMoped = Validate.GetValidString("What type of moped is it?");
             return new Moped(mopedclass, typeofMoped, plateNumber, model, color, propellant, manufacturer, yearMade);
         }
+        public override string ToString()
+        {
+            return $"A {Color.ToLower()} moped ({Manufacturer} {Model}) with the following registration number: {RegistrationNumber}";
+        }
     }
 
 }
