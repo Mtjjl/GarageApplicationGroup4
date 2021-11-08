@@ -13,7 +13,7 @@ namespace GarageApplicationGroup4
             bool isRunning = true;
             while (isRunning)
             {
-                Console.WriteLine("[1] Show all vehicles" +
+                Console.WriteLine("[1] See vehicles" +
                     "\n[2] Park new vehicle" +
                     "\n[3] Remove vehicle" +
                     "\n[4] Search vehicle" +
@@ -36,10 +36,8 @@ namespace GarageApplicationGroup4
                         break;
 
                     case "4":
-                        if (Validate.GetValidPlateNumber(out string plateNumber))
-                        {
-                            Manage.Garage().SearchForVehicle(plateNumber);
-                        }
+                        string plateNumber = Validate.GetValidPlateNumber();
+                        Manage.Garage().SearchForVehicle(plateNumber);
                         break;
 
                     case "5":

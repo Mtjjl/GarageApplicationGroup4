@@ -8,6 +8,41 @@ namespace GarageApplicationGroup4
 {
     static class Validate
     {
+        public static string GetValidPlateNumber()
+        {
+            string input = string.Empty;
+            bool inputAccepted = false;
+
+            while (!inputAccepted)
+            {
+                Console.Clear();
+                Console.WriteLine($"Please enter a valid plate number in the following format: ABC123\n");
+                input = Console.ReadLine().ToUpper().Trim();
+
+                if (input.Length == 6)
+                {
+                    if (
+                        Char.IsLetter(input[0])
+                        && Char.IsLetter(input[1])
+                        && Char.IsLetter(input[2])
+                        && Char.IsNumber(input[3])
+                        && Char.IsNumber(input[4])
+                        && Char.IsNumber(input[5])
+                        )
+                    {
+                        Console.Clear();
+                        inputAccepted = true;
+                        return input;
+                    }
+                }
+            }
+            Console.Clear();
+            return "";
+        }
+
+
+
+
         public static bool GetValidPlateNumber(out string input)
         {
             input = string.Empty;

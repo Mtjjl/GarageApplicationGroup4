@@ -23,7 +23,7 @@
         public static Moped NewMoped(string plateNumber, string manufacturer, string model, string color, string propellant, int yearMade)
         {
             string mopedclass = Validate.GetValidString("What moped class is it?", "Class 1", "Class 2");
-            string typeofMoped = Validate.GetValidString("What type of moped is it?");
+            string typeofMoped = Validate.GetValidString("What type of moped is it?", "Vespa", "Crossmoped", "Veteran");
             return new Moped(mopedclass, typeofMoped, plateNumber, model, color, propellant, manufacturer, yearMade);
         }
         public override string ToString()
