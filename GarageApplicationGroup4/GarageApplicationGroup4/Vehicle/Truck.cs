@@ -26,7 +26,7 @@ namespace GarageApplicationGroup4
 
 		public static Truck NewTruck(string plateNumber, string manufacturer, string model, string color, string propellant, int yearMade)
 		{
-			string weightclass = Validate.GetValidString("What weight class is it?");
+			string weightclass = Validate.GetValidString("What weight class is it?", "Light", "Medium", "Heavy");
 			int weightpulled = Validate.GetValidNumber("How much weight can it pull? In tons.", 1, 15);
 			int wheels = Convert.ToInt32(Validate.GetValidString("How many wheels does it have?", "8", "10", "12", "14", "16", "18"));
 			return new Truck(weightclass, weightpulled, plateNumber, model, color, propellant, manufacturer, wheels, yearMade);

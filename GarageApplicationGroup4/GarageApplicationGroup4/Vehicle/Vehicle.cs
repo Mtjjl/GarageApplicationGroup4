@@ -38,7 +38,7 @@ namespace GarageApplicationGroup4
             string manufacturer = Validate.GetValidString("What's the manufacturer?");
             string model = Validate.GetValidString("What model is it?");
             string color = Validate.GetValidString("What color is it?");
-            string propellant = Validate.GetValidString("What propellant does it use?", "Fuel", "Petrol", "Biofuel", "Electricity");
+            string propellant = Validate.GetValidString("What propellant does it use?", "Petrol", "Diesel", "Biofuel", "Electricity");
             int yearMade = Validate.GetValidNumber("When was it made?", 1950, 2021);
 
             switch (choice)
