@@ -42,7 +42,7 @@ namespace GarageApplicationGroup4
             Console.WriteLine("...........'''....................'''............................................||............................||.....");
             Console.WriteLine("");
             Console.WriteLine("");
-            Thread.Sleep(100);
+            Thread.Sleep(250);
             Console.Clear();
 
             Console.WriteLine("");
@@ -71,7 +71,7 @@ namespace GarageApplicationGroup4
             Console.WriteLine("..............'''....................'''.........................................||............................||.....");
             Console.WriteLine("");
             Console.WriteLine("");
-            Thread.Sleep(100);
+            Thread.Sleep(250);
             Console.Clear();
 
             Console.WriteLine("");
@@ -100,7 +100,7 @@ namespace GarageApplicationGroup4
             Console.WriteLine("..................'''....................'''.....................................||............................||.....");
             Console.WriteLine("");
             Console.WriteLine("");
-            Thread.Sleep(100);
+            Thread.Sleep(250);
             Console.Clear();
 
             Console.WriteLine("");
@@ -129,7 +129,7 @@ namespace GarageApplicationGroup4
             Console.WriteLine(".....................'''....................'''..................................||............................||.....");
             Console.WriteLine("");
             Console.WriteLine("");
-            Thread.Sleep(100);
+            Thread.Sleep(250);
             Console.Clear();
 
             Console.WriteLine("");
@@ -158,7 +158,7 @@ namespace GarageApplicationGroup4
             Console.WriteLine("........................'''....................'''...............................||............................||.....");
             Console.WriteLine("");
             Console.WriteLine("");
-            Thread.Sleep(100);
+            Thread.Sleep(250);
             Console.Clear();
 
             Console.WriteLine("");
@@ -187,7 +187,7 @@ namespace GarageApplicationGroup4
             Console.WriteLine("...........................'''....................'''............................||............................||.....");
             Console.WriteLine("");
             Console.WriteLine("");
-            Thread.Sleep(100);
+            Thread.Sleep(250);
             Console.Clear();
 
             Console.WriteLine("");
@@ -216,7 +216,7 @@ namespace GarageApplicationGroup4
             Console.WriteLine("..............................'''....................'''.........................||............................||.....");
             Console.WriteLine("");
             Console.WriteLine("");
-            Thread.Sleep(100);
+            Thread.Sleep(250);
             Console.Clear();
 
             Console.WriteLine("");
@@ -245,7 +245,7 @@ namespace GarageApplicationGroup4
             Console.WriteLine("..................................'''....................'''.....................||............................||.....");
             Console.WriteLine("");
             Console.WriteLine("");
-            Thread.Sleep(100);
+            Thread.Sleep(250);
             Console.Clear();
 
             Console.WriteLine("");
@@ -274,7 +274,7 @@ namespace GarageApplicationGroup4
             Console.WriteLine("........................................'''....................'''...............||............................||.....");
             Console.WriteLine("");
             Console.WriteLine("");
-            Thread.Sleep(100);
+            Thread.Sleep(250);
             Console.Clear();
 
             Console.WriteLine("");
