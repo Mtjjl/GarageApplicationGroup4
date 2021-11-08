@@ -31,6 +31,10 @@ namespace GarageApplicationGroup4
 			return new Motorcycle(plateNumber, model, manufacturer, yearMade, propellant, color, wheels, weightclass, numberOfCC);
 		}
 
+		public override string ToString()
+		{
+			return $"A {Color.ToLower()} motorcycle ({Manufacturer} {Model}) with the following registration number: {RegistrationNumber}";
+		}
 	}
 
 }

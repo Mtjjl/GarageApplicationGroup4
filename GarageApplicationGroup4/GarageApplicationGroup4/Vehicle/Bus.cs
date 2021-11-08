@@ -31,6 +31,10 @@ namespace GarageApplicationGroup4
 			int wheels = Convert.ToInt32(Validate.GetValidString("How many wheels does it have?", "4", "6", "8", "10"));
 			return new Bus(numberOfPassengers, isDoubleDecker, plateNumber, model, color, propellant, manufacturer, wheels, yearMade);
 		}
+		public override string ToString()
+		{
+			return $"A {Color.ToLower()} bus ({Manufacturer} {Model}) with the following registration number: {RegistrationNumber}";
+		}
 	}
 
 }
