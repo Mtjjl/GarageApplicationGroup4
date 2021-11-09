@@ -73,9 +73,20 @@ namespace GarageApplicationGroup4
 
         public static string GetValidString(string info)
         {
-            Console.WriteLine(info);
-            string output = Console.ReadLine().Trim();
-            Console.Clear();
+            string output = string.Empty;
+
+            while (string.IsNullOrEmpty(output))
+            {
+                Console.WriteLine(info);
+                output = Console.ReadLine().Trim();
+                if (string.IsNullOrEmpty(output))
+                {
+                    Console.Clear();
+                    Console.WriteLine("Input can not be empty.");
+                    Break.PleaseWait(1);
+                }
+                Console.Clear();
+            }
             return output;
         }
 
