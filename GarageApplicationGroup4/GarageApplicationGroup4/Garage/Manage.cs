@@ -162,6 +162,7 @@ namespace GarageApplicationGroup4
                 if (!File.Exists($"SavedVehicles\\{Garage.Name}.xml"))
                 {
                     Save();
+                    DefaultVehicles();
                 }
                 else
                 {
@@ -181,6 +182,24 @@ namespace GarageApplicationGroup4
                 Console.WriteLine("Something went wrong when trying to load...");
                 Break.PleaseWait(2);
             }
+        }
+
+        //Standardfordon som läggs till när nytt garage skapas
+        private void DefaultVehicles()
+        {
+            Car firstCar = new Car(false, false, "XMP066", "RS6", "Black", "Diesel", "Audi", 2020);
+            Motorcycle firstMotorcycle = new Motorcycle("YEZ822", "R1", "Yamaha", 2019, "Petrol", "Blue", 2, "Heavy", 2019);
+            Moped firstMoped = new Moped("Class 1", "Crossmoped", "PLD781", "Senda DRD PRO", "Red/White", "Petrol", "Derbi", 2017);
+            Truck firstTruck = new Truck("Heavy", 10, "TRY096", "PRT Range", "Dark green", "Diesel", "Scania", 8, 2018);
+            Bus firstBus = new Bus(48, false, "MLT715", "9900", "Yellow", "Diesel", "Volvo", 10, 2015);
+
+
+            Garage.Vehicles.Add(firstCar);
+            Garage.Vehicles.Add(firstMotorcycle);
+            Garage.Vehicles.Add(firstMoped);
+            Garage.Vehicles.Add(firstTruck);
+            Garage.Vehicles.Add(firstBus);
+
         }
     }
 }
