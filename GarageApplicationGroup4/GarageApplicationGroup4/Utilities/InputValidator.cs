@@ -8,6 +8,7 @@ namespace GarageApplicationGroup4
 {
     static class Validate
     {
+        //Denna metod tittar om ett reg-nummer redan är upptaget.
         public static bool IsPlateNumberBusy(string input, Manage manage)
         {
             List<string> plateNumbers = manage.Garage.Vehicles
@@ -22,6 +23,7 @@ namespace GarageApplicationGroup4
             return false;
         }
 
+        //Denna metod returnerar en string med registreringsnummer baserad på användarens inpt. Fortsätter tills användaren matar in i rätt format.
         public static string GetValidPlateNumber()
         {
             string input = string.Empty;
@@ -54,6 +56,8 @@ namespace GarageApplicationGroup4
             return "";
         }
 
+        /*Denna metod returnerar sedan en siffra mellan ett min- och maxvärde. 
+        Användaren får mata in värdet tills det är inom detta talområde.*/
         public static int GetValidNumber(string info, int min, int max)
         {
             bool inputAccepted = false;
@@ -71,6 +75,7 @@ namespace GarageApplicationGroup4
             return validNumber;
         }
 
+        //Returnerar en string som användaren matar in. Det får inte vara en tom string, då måste användaren göra om sin input
         public static string GetValidString(string info)
         {
             string output = string.Empty;
@@ -90,6 +95,8 @@ namespace GarageApplicationGroup4
             return output;
         }
 
+        /*Returnerar en string baserad på användarens input. Denna input måste stämma överens med någon av de "choices" som anges.
+        Om det inte stämmer överens, måste användaren skriva in input på nytt.*/
         public static string GetValidString(string info, params string[] choices)
         {
             bool inputAccepted = false;
@@ -120,6 +127,7 @@ namespace GarageApplicationGroup4
             return output;
         }
 
+        //Denna metod används vid Ja- eller nejfrågor. Fortsätter tills användaren matat in korrekt input
         public static bool GetYesOrNo(string inputInfo)
         {
             bool inputAccepted = false;
