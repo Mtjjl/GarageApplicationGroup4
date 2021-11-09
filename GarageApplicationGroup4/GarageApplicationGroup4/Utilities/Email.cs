@@ -14,10 +14,10 @@ namespace GarageApplicationGroup4
             message.From.Add(new MailboxAddress("Grupp 4", "garagegrupp4@gmail.com"));
 
             //Mottagarmejl - Test
-            //message.To.Add(MailboxAddress.Parse("garagegrupp4@gmail.com"));
+            message.To.Add(MailboxAddress.Parse("garagegrupp4@gmail.com"));
 
             //Mottagarmail - MICKE
-            message.To.Add(MailboxAddress.Parse("msdata1010@gmail.com"));
+            //message.To.Add(MailboxAddress.Parse("msdata1010@gmail.com"));
 
             //Meddelande ämne
             message.Subject = "Din digitala faktura från din parkering hos GarageGrupp4.";
