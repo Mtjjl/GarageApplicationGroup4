@@ -11,7 +11,7 @@ namespace GarageApplicationGroup4
     {
         public static void LaunchApplication()
         {
-            Garage<Vehicle> garage = CreateGarage(out Manage manage);
+            Garage<Vehicle> garage = SelectGarage(out Manage manage);
             manage.Load();
 
             Graphics graphs = new Graphics();
@@ -22,7 +22,7 @@ namespace GarageApplicationGroup4
             menu.MenuMethod(manage);
         }
 
-        private static Garage<Vehicle> CreateGarage(out Manage manage)
+        private static Garage<Vehicle> SelectGarage(out Manage manage)
         {
             Console.WriteLine("Before the application can start, we need to know which garage you want to use.\n");
             Thread.Sleep(1000);
