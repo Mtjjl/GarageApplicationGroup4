@@ -8,6 +8,7 @@ namespace GarageApplicationGroup4
 {
     static class Break
     {
+        //DRY-metod för kommando som ofta repeterades. En paus på x sekunder och console-rensning.
         public static void PleaseWait(int seconds)
         {
             Console.WriteLine("Please wait...");
@@ -15,6 +16,7 @@ namespace GarageApplicationGroup4
             Console.Clear();
         }
 
+        //DRY-metod för kommando som ofta repeterades. En paus tills användaren trycker på en knapp.
         public static void PressToContinue()
         {
             Console.WriteLine("\nPress any key to continue");

@@ -60,7 +60,7 @@ namespace GarageApplicationGroup4
             }
         }
 
-        public void GreetingMessage(Manage manage)
+        public void GreetingMessage()
         {
             Console.WriteLine("Welcome to the Garage!\n");
         }
@@ -124,7 +124,7 @@ namespace GarageApplicationGroup4
 
                     default:
                         Console.Clear();
-                        Console.WriteLine("Select a number between 1-6 in the menu and press Enter to proceed.");
+                        Console.WriteLine("Select a number between 1-7 in the menu and press Enter to proceed.");
                         Break.PressToContinue();
                         break;
                 }

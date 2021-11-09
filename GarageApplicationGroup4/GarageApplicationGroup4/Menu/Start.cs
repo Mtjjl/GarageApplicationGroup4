@@ -9,6 +9,9 @@ namespace GarageApplicationGroup4
 {
     static class Start
     {
+        /*Denna metod startar applikationen. Via metoden SelectGarage skapas ett Garage<Vehicle>-objekt med tillhörande Manage-objekt
+        Manage-objektet kör sedan Load-metoden för att hantera filer. Hellomessage() tar emot manage-objektet för att visa animationen
+        så att den stämmer överens med aktuellt garag. Sedan tar menu in manage för att få rätt information till dess metoder*/
         public static void LaunchApplication()
         {
             Garage<Vehicle> garage = SelectGarage(out Manage manage);
@@ -18,10 +21,13 @@ namespace GarageApplicationGroup4
             graphs.Hellomessage(manage);
 
             Menu menu = new Menu();
-            menu.GreetingMessage(manage);
+            menu.GreetingMessage();
             menu.MenuMethod(manage);
         }
 
+        /*Denna metod låter användaren välja vilket garage som ska användas. Om garage finns sparade visas dessa.
+        Användaren skriver in namnet på sparat garage för att ladda detta eller ett nytt namn för att skapa nytt.
+        Metoden returnerar garaget och tar även med sig ett Manage-objekt kopplat till garaget.*/
         private static Garage<Vehicle> SelectGarage(out Manage manage)
         {
             Thread.Sleep(1000);
@@ -35,6 +41,9 @@ namespace GarageApplicationGroup4
             return garage;
         }
 
+        /*Denna metod returnerar en lista på filnamn från mappen SavedVehicles, om sådana filer finns.
+        Annars talar den om att inga filer finns. För säkerhets skull kollar den om mappen SavedVehicles finns
+        Och skapar den om den ej existerar. Metoden används i SelectGarage.*/
         private static string ListAllFiles()
         {
             try
