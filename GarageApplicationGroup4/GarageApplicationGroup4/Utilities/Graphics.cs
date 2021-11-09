@@ -10,7 +10,7 @@ namespace GarageApplicationGroup4
     {
         public void Hellomessage(Manage manage)
         {
-            int pN = manage.Garage.vehicles.Count();
+            int pN = manage.Garage.Vehicles.Count();
             int mN = manage.Garage.MaxLimit;
             int fS = (mN - pN);
 

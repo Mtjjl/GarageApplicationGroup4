@@ -9,7 +9,7 @@ namespace GarageApplicationGroup4
 {
     public class Garage<T> : IEnumerable where T : Vehicle
     {
-        public List<T> vehicles { get; set; } = new List<T>();
+        public List<T> Vehicles { get; set; } = new List<T>();
         public int MaxLimit { get; }
         public string Name { get; set; }
 
@@ -23,7 +23,7 @@ namespace GarageApplicationGroup4
          *på objekt från denna klass är kopplat till listan "vehicles". */
         IEnumerator IEnumerable.GetEnumerator()
         {
-            foreach (T vehicle in vehicles)
+            foreach (T vehicle in Vehicles)
             {
                 yield return vehicle;
             }
