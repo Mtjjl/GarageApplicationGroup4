@@ -10,7 +10,7 @@ namespace GarageApplicationGroup4
     {
         public static bool IsPlateNumberBusy(string input, Manage manage)
         {
-            List<string> plateNumbers = manage.Garage.vehicles
+            List<string> plateNumbers = manage.Garage.Vehicles
                             .Select(x => x.RegistrationNumber.ToUpper()).ToList();
 
             if (plateNumbers.Contains(input.ToUpper()))

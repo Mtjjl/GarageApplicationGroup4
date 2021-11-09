@@ -21,9 +21,9 @@ namespace GarageApplicationGroup4
         //Lägger till en ny bil (som skapas via metoden GetNewVehicle) till 
         public void AddVehicle()
         {
-            if (Garage.vehicles.Count < Garage.MaxLimit)
+            if (Garage.Vehicles.Count < Garage.MaxLimit)
             {
-                Garage.vehicles.Add(Vehicle.GetNewVehicle(this));
+                Garage.Vehicles.Add(Vehicle.GetNewVehicle(this));
                 Console.WriteLine("Vehicle added successfully.");
                 Break.PressToContinue();
             }
@@ -38,7 +38,7 @@ namespace GarageApplicationGroup4
         //Användaren får också möjligheten att inte ta bort ett fordon.
         public void RemoveVehicle()
         {
-            if (Garage.vehicles.Any())
+            if (Garage.Vehicles.Any())
             {
                 StringBuilder stringBuilder = new StringBuilder();
                 int index = 1;
@@ -54,7 +54,7 @@ namespace GarageApplicationGroup4
                 stringBuilder.Append($"\nEnter the number of the vehicle you want to remove." +
                                      $"\nIf you do not wish to remove a vehicle, enter 0");
 
-                int userInput = Validate.GetValidNumber(stringBuilder.ToString(), 0, Garage.vehicles.Count) - 1;
+                int userInput = Validate.GetValidNumber(stringBuilder.ToString(), 0, Garage.Vehicles.Count) - 1;
 
                 if (userInput < 0)
                 {
@@ -64,7 +64,7 @@ namespace GarageApplicationGroup4
                 }
                 else
                 {
-                    Garage.vehicles.RemoveAt(userInput);
+                    Garage.Vehicles.RemoveAt(userInput);
                     Console.WriteLine("Vehicle removed successfully.");
                     Break.PleaseWait(3);
                 }
@@ -80,7 +80,7 @@ namespace GarageApplicationGroup4
         //Tar reda på om det om det finns fordon i garaget. Om det finns minst ett skriver den ut alla fordon.
         public void ListAllVehicles()
         {
-            if (Garage.vehicles.Any())
+            if (Garage.Vehicles.Any())
             {
                 Console.WriteLine("Here are all the vehicles in the garage:\n");
                 int index = 1;
@@ -102,7 +102,7 @@ namespace GarageApplicationGroup4
          * När man kallar på denna metod byts T ut mot en fordonstyp, t.ex. Car...*/
         public void ListVehiclesOfType<T>() where T : Vehicle
         {
-            if (Garage.vehicles.OfType<T>().Any())
+            if (Garage.Vehicles.OfType<T>().Any())
             {
                 Console.WriteLine("Here are all the vehicles of the chosen type in the garage:\n");
                 int index = 1;
@@ -143,7 +143,7 @@ namespace GarageApplicationGroup4
                 //Serialize: File.Create-- > Skapar, eller "uppdaterar" en fil.
                 Stream stream = File.Create($"SavedVehicles\\{Garage.Name}.xml");
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Vehicle>));
-                xmlSerializer.Serialize(stream, Garage.vehicles);
+                xmlSerializer.Serialize(stream, Garage.Vehicles);
                 stream.Close();
 
                 //Check in Console
@@ -168,7 +168,7 @@ namespace GarageApplicationGroup4
                     XmlSerializer xmlDeserializer = new XmlSerializer(typeof(List<Vehicle>));
                     using (FileStream streamReader = File.Open($"SavedVehicles\\{Garage.Name}.xml", FileMode.Open))
                     {
-                        Garage.vehicles = (List<Vehicle>)xmlDeserializer.Deserialize(streamReader);
+                        Garage.Vehicles = (List<Vehicle>)xmlDeserializer.Deserialize(streamReader);
 
                         //Check in Console
                         //xmlDeserializer.Serialize(Console.Out, Garage<Vehicle>.Get().vehicles);
