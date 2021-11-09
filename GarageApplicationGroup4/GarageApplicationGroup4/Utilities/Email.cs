@@ -16,7 +16,7 @@ namespace GarageApplicationGroup4
             //Mottagarmejl - Test
             //message.To.Add(MailboxAddress.Parse("garagegrupp4@gmail.com"));
 
-            //Mottagarmail - MICKES
+            //Mottagarmail - MICKE
             message.To.Add(MailboxAddress.Parse("msdata1010@gmail.com"));
 
             //Meddelande ämne
