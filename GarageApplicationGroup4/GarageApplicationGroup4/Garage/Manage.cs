@@ -16,7 +16,7 @@ namespace GarageApplicationGroup4
             Garage = garage;
         }
 
-        //Lägger till en ny bil (som skapas via metoden GetNewVehicle) till 
+        //Lägger till en ny bil (som skapas via metoden GetNewVehicle) till garaget
         public void AddVehicle()
         {
             if (Garage.Vehicles.Count < Garage.MaxLimit)
@@ -75,7 +75,7 @@ namespace GarageApplicationGroup4
         }
 
 
-        //Tar reda på om det om det finns fordon i garaget. Om det finns minst ett skriver den ut alla fordon.
+        //Tar reda på om det om det finns fordon i garaget. Om det finns minst ett skriver den ut alla fordon, annars talar den om att garaget är tomt.
         public void ListAllVehicles()
         {
             if (Garage.Vehicles.Any())
@@ -134,6 +134,7 @@ namespace GarageApplicationGroup4
             Break.PleaseWait(2);
         }
 
+        //Skapar xml-fil och/eller skriver/skriver över denna fil med information från garaget.
         public void Save()
         {
             try
@@ -143,9 +144,6 @@ namespace GarageApplicationGroup4
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Vehicle>));
                 xmlSerializer.Serialize(stream, Garage.Vehicles);
                 stream.Close();
-
-                //Check in Console
-                //xmlSerializer.Serialize(Console.Out, Garage<Vehicle>.Get().vehicles);
             }
             catch (Exception)
             {
@@ -153,6 +151,9 @@ namespace GarageApplicationGroup4
             }
         }
 
+        /*Tar reda på om det finns en sparfil kopplat till garagets namn, om fil ej finns så skapas en sådan via Save-metoden varpå DefaultVehicles()
+        kallas på så att det ska finnas några bilar färdiga i ett nystartat garage. Om fil finns översätts informationen från filen och läggs
+        till i garaget*/
         public void Load()
         {
             try
@@ -168,9 +169,6 @@ namespace GarageApplicationGroup4
                     using (FileStream streamReader = File.Open($"SavedVehicles\\{Garage.Name}.xml", FileMode.Open))
                     {
                         Garage.Vehicles = (List<Vehicle>)xmlDeserializer.Deserialize(streamReader);
-
-                        //Check in Console
-                        //xmlDeserializer.Serialize(Console.Out, Garage<Vehicle>.Get().vehicles);
                     }
                 }
             }
@@ -191,13 +189,11 @@ namespace GarageApplicationGroup4
             Truck firstTruck = new Truck("Heavy", 10, "TRY096", "PRT Range", "Dark green", "Diesel", "Scania", 8, 2018);
             Bus firstBus = new Bus(48, false, "MLT715", "9900", "Yellow", "Diesel", "Volvo", 10, 2015);
 
-
             Garage.Vehicles.Add(firstCar);
             Garage.Vehicles.Add(firstMotorcycle);
             Garage.Vehicles.Add(firstMoped);
             Garage.Vehicles.Add(firstTruck);
             Garage.Vehicles.Add(firstBus);
-
         }
     }
 }

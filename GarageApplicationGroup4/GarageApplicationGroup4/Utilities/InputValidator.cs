@@ -31,10 +31,17 @@ namespace GarageApplicationGroup4
             while (!inputAccepted)
             {
                 Console.Clear();
-                Console.WriteLine($"Please enter a valid plate number in the following format: ABC123\n");
+                Console.WriteLine($"Please enter a valid plate number in the following format: ABC123 or ABC12A (I, Q, V, Å, Ä & Ö are not allowed)\n");
                 input = Console.ReadLine().ToUpper().Trim();
 
-                if (input.Length == 6)
+                if (input.Length == 6
+                    && !input.Contains("Å")
+                    && !input.Contains("Ä")
+                    && !input.Contains("Ö")
+                    && !input.Contains("I")
+                    && !input.Contains("Q")
+                    && !input.Contains("V")
+                    )
                 {
                     if (
                         Char.IsLetter(input[0])
@@ -42,7 +49,7 @@ namespace GarageApplicationGroup4
                         && Char.IsLetter(input[2])
                         && Char.IsNumber(input[3])
                         && Char.IsNumber(input[4])
-                        && Char.IsNumber(input[5])
+                        && (Char.IsNumber(input[5]) || Char.IsLetter(input[5]))
                         )
                     {
                         Console.Clear();
