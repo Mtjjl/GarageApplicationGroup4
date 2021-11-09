@@ -1,4 +1,5 @@
-﻿namespace GarageApplicationGroup4
+﻿
+namespace GarageApplicationGroup4
 {
 	public class Moped : Vehicle
 	{
