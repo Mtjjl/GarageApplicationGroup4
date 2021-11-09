@@ -60,7 +60,7 @@ namespace GarageApplicationGroup4
                 }
                 else
                 {
-                    stringBuilder.Append("You currently don't have any garages saved on your computer.");
+                    stringBuilder.Append("You don't have any garages saved on your computer, you need to add a new one.");
                 }
 
                 return stringBuilder.ToString();
